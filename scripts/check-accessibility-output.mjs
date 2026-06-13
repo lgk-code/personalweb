@@ -45,6 +45,10 @@ const requiredFragments = [
   ['aria-label="关键证据"', "hero proof row must have an accessible label"],
   ['aria-label="AIFocus 技术栈"', "AIFocus stack list must have an accessible label"],
   ['aria-label="CodePath 技术栈"', "CodePath stack list must have an accessible label"],
+  ['aria-labelledby="aifocus-project-title"', "AIFocus article must be labelled by its title"],
+  ['id="aifocus-project-title"', "AIFocus article title id must exist"],
+  ['aria-labelledby="codepath-project-title"', "CodePath article must be labelled by its title"],
+  ['id="codepath-project-title"', "CodePath article title id must exist"],
 ];
 
 for (const [fragment, message] of requiredFragments) {

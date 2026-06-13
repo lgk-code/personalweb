@@ -88,12 +88,14 @@ function ProjectVisual({ visual }: { visual: Project["visual"] }) {
 }
 
 function ProjectArticle({ project }: { project: Project }) {
+  const titleId = `${project.visual}-project-title`;
+
   return (
-    <article className="project-card">
+    <article className="project-card" aria-labelledby={titleId}>
       <ProjectVisual visual={project.visual} />
       <div className="project-copy">
         <p className="section-kicker">{project.role}</p>
-        <h3>{project.name}</h3>
+        <h3 id={titleId}>{project.name}</h3>
         <p>{project.summary}</p>
         <ul>
           {project.evidence.map((item) => (
