@@ -5,6 +5,7 @@ const contentFiles = [
   "src/app/apple-icon.tsx",
   "src/app/icon.tsx",
   "src/app/layout.tsx",
+  "src/app/manifest.ts",
   "src/app/not-found.tsx",
   "src/app/opengraph-image.tsx",
   "src/app/page.tsx",
