@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { site } from "@/lib/site";
+import { site } from "../lib/site";
 
 export const size = {
   width: 64,

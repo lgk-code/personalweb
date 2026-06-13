@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { site } from "@/lib/site";
+import { site } from "../lib/site";
 
 export const alt = "lgk-code personal website preview";
 export const size = {
