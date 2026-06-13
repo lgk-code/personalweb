@@ -4,6 +4,7 @@ import path from "node:path";
 import { promisify } from "node:util";
 
 const htmlPath = path.join(process.cwd(), ".next", "server", "app", "index.html");
+const notFoundHtmlPath = path.join(process.cwd(), ".next", "server", "app", "_not-found.html");
 const execFileAsync = promisify(execFile);
 const timeoutSeconds = 20;
 
@@ -16,7 +17,11 @@ if (!existsSync(htmlPath)) {
   fail(`missing ${path.relative(process.cwd(), htmlPath)}; run npm run build first`);
 }
 
-const html = readFileSync(htmlPath, "utf8");
+if (!existsSync(notFoundHtmlPath)) {
+  fail(`missing ${path.relative(process.cwd(), notFoundHtmlPath)}; run npm run build first`);
+}
+
+const html = `${readFileSync(htmlPath, "utf8")}\n${readFileSync(notFoundHtmlPath, "utf8")}`;
 const links = [
   ...new Set(
     [...html.matchAll(/<a\b[^>]*\shref="(https:\/\/[^"]+)"/g)].map((match) => match[1])

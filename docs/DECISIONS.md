@@ -43,7 +43,7 @@
 - Runtime smoke checks start `next start` on an ephemeral local port and verify key routes, `manifest.webmanifest`, and actual security response headers.
 - Static accessibility output checks cover landmarks, skip targets, labelled navigation, focus outlines, reduced motion, image alt text, and link safety.
 - Public link checks use a static allowlist for rendered homepage and 404 HTTPS links and prevent not-yet-public repository links from appearing. The allowlist includes the GitHub profile, the CodePath release page, and the CodePath extension download.
-- Live public link checks are available as an opt-in final-review command, but stay out of `npm run quality` to avoid network flakes in CI. The script uses `curl` so WSL proxy settings are honored consistently, and strips query/hash from redirected URLs before printing results.
+- Live public link checks cover rendered homepage and 404 links as an opt-in final-review command, but stay out of `npm run quality` to avoid network flakes in CI. The script uses `curl` so WSL proxy settings are honored consistently, and strips query/hash from redirected URLs before printing results.
 - Project docs consistency checks keep the repository binding, living `AGENTS.md` rule, `/neat` context-hygiene rule, real browser screenshot requirement, and three-agent final review gate from disappearing by accident.
 - Audit checks require zero moderate-or-higher advisories.
 - Pin `next` to `16.2.9` and use an npm override for its internal `postcss` dependency until Next ships the patched PostCSS version upstream.
