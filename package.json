@@ -23,9 +23,10 @@
     "check:a11y": "node scripts/check-accessibility-output.mjs",
     "check:links": "node scripts/check-public-links.mjs",
     "check:links:live": "node scripts/check-public-links-live.mjs",
+    "check:docs": "node scripts/check-project-docs.mjs",
     "check:audit": "node scripts/check-audit.mjs",
     "scan:secrets": "node scripts/scan-secrets.mjs",
-    "quality": "npm run check:assets && npm test && npm run lint && npm run check:design && npm run check:content && npm run check:contrast && npm run check:asset-privacy && npm run build && npm run check:html && npm run check:routes && npm run check:smoke && npm run check:a11y && npm run check:links && npm run scan:secrets && npm run check:audit"
+    "quality": "npm run check:assets && npm test && npm run lint && npm run check:design && npm run check:content && npm run check:contrast && npm run check:asset-privacy && npm run build && npm run check:html && npm run check:routes && npm run check:smoke && npm run check:a11y && npm run check:links && npm run check:docs && npm run scan:secrets && npm run check:audit"
   },
   "dependencies": {
     "next": "16.2.9",
