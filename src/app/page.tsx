@@ -21,11 +21,6 @@ function StructuredData() {
       url: project.links[0]?.href,
       keywords: project.stack.join(", "),
     })),
-    subjectOf: {
-      "@type": "CreativeWork",
-      name: "personalweb",
-      url: site.repositoryUrl,
-    },
   };
 
   return (
@@ -189,7 +184,9 @@ export default function Home() {
           <h2>接下来会把这个站点继续打磨到能经受截图、代码和多角色评审。</h2>
           <div className="contact-actions">
             <a href={site.profileUrl}>GitHub</a>
-            <a href={site.repositoryUrl}>personalweb repo</a>
+            <a href="https://github.com/lgk-code/codepath-extension/releases/latest">
+              CodePath release
+            </a>
           </div>
         </div>
       </section>

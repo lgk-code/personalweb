@@ -34,12 +34,7 @@ export const portfolio = {
         "当前形态包含 Next.js 前台与独立 FastAPI 后端，worker 负责抓取、处理、模型评分、embedding 和日报生成",
       ],
       stack: ["Next.js", "FastAPI", "Postgres", "Redis/arq", "OpenAI-compatible models"],
-      links: [
-        {
-          label: "Project source",
-          href: "https://github.com/lgk-code/AIFocus",
-        },
-      ],
+      links: [],
     },
     {
       name: "CodePath",

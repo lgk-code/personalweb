@@ -80,7 +80,11 @@ if (!imageTags.some((tag) => tag.includes('alt="CodePath'))) {
   fail("missing non-decorative CodePath image alt text");
 }
 
-if (/\/home\/lgk|API key|token|password|next\.svg|vercel\.svg/i.test(html)) {
+if (
+  /\/home\/lgk|API key|token|password|next\.svg|vercel\.svg|github\.com\/lgk-code\/AIFocus/i.test(
+    html
+  )
+) {
   fail("found sensitive, private, or scaffold-only text in rendered HTML");
 }
 

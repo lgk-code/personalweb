@@ -25,6 +25,10 @@ describe("portfolio content", () => {
     expect(portfolio.projects.find((project) => project.name === "CodePath")?.summary).toContain(
       "GitHub 源码"
     );
+    expect(portfolio.projects.find((project) => project.name === "AIFocus")?.links).toEqual([]);
+    expect(portfolio.projects.find((project) => project.name === "CodePath")?.links[0]?.href).toBe(
+      "https://github.com/lgk-code/codepath-extension/releases/latest"
+    );
   });
 
   it("documents project-backed evidence chains without private paths", () => {

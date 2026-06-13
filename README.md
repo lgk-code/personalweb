@@ -49,7 +49,7 @@ npm run quality
 
 GitHub Actions 会在 `main` push 和 pull request 上运行同一套质量门禁。
 
-首页包含 JSON-LD 结构化数据，用于描述 `lgk-code`、AIFocus、CodePath 和当前仓库的公开关系。
+首页包含 JSON-LD 结构化数据，用于描述 `lgk-code`、AIFocus 和 CodePath 的公开关系。
 
 ## 资产
 
