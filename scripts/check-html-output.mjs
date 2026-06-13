@@ -34,6 +34,16 @@ const requiredText = [
   "https://schema.org",
   "github.com/lgk-code/codepath-extension/releases/latest",
   'rel="canonical"',
+  'meta name="application-name"',
+  'link rel="author"',
+  'meta name="author"',
+  'meta property="og:title"',
+  'meta property="og:description"',
+  'meta property="og:image"',
+  'meta property="og:image:alt"',
+  'meta name="twitter:card"',
+  'meta name="twitter:title"',
+  'meta name="twitter:image"',
   "每个项目都要能说清楚输入、处理和输出。",
 ];
 
