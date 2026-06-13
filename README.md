@@ -61,7 +61,7 @@ npm run quality
 `npm run check:routes` 会在生产构建后检查 App Router manifest，确保主页、404、图标、OG、robots 和 sitemap 都保持静态输出。
 `npm run check:smoke` 会在生产构建后启动 `next start`，检查首页、404、metadata routes、manifest、图片 routes 和实际安全响应头。
 `npm run check:a11y` 会在生产构建后检查主 landmark、跳转链接、导航标签、焦点样式、图片 alt 和 reduced-motion 兜底。
-`npm run check:links` 会在生产构建后检查首页公开 HTTPS 链接是否在 allowlist 内，并禁止渲染尚未公开的项目仓库链接。
+`npm run check:links` 会在生产构建后检查首页公开 HTTPS 链接是否在 allowlist 内，并禁止渲染尚未公开的项目仓库链接。当前公开链接包括 GitHub profile、CodePath release 页和 CodePath 扩展包下载链接。
 `npm run check:links:live` 会在生产构建后通过 `curl` 实际访问首页公开链接；这是终审前手动检查，不进入默认 `quality`，避免 CI 受网络波动影响。
 `npm run check:docs` 会检查 AGENTS、README、ROADMAP、DECISIONS、终审 rubric 和 CI 配置是否保留项目绑定、三 Agent 门禁、真实浏览器截图要求和关键协作规则。
 `npm run check:audit` 会运行 npm audit，要求 moderate 及以上漏洞为 0。

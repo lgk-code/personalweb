@@ -85,6 +85,17 @@ async function checkLink(link) {
   return result;
 }
 
+function formatResultUrl(finalUrl) {
+  try {
+    const url = new URL(finalUrl);
+    url.search = "";
+    url.hash = "";
+    return url.toString();
+  } catch {
+    return finalUrl;
+  }
+}
+
 const results = [];
 
 for (const link of links) {
@@ -97,6 +108,6 @@ for (const link of links) {
 
 console.log(
   `Live public link check passed (${results.length} links: ${results
-    .map(({ status, finalUrl }) => `${status} ${finalUrl}`)
+    .map(({ status, finalUrl }) => `${status} ${formatResultUrl(finalUrl)}`)
     .join("; ")})`
 );

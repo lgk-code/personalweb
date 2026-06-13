@@ -34,6 +34,7 @@ const requiredText = [
   "application/ld+json",
   "https://schema.org",
   "github.com/lgk-code/codepath-extension/releases/latest",
+  "github.com/lgk-code/codepath-extension/releases/latest/download/CodePath.zip",
   'rel="canonical"',
   'rel="manifest"',
   "/manifest.webmanifest",

@@ -21,6 +21,7 @@ const links = [
 const allowedLinks = new Set([
   "https://github.com/lgk-code",
   "https://github.com/lgk-code/codepath-extension/releases/latest",
+  "https://github.com/lgk-code/codepath-extension/releases/latest/download/CodePath.zip",
 ]);
 
 if (links.length === 0) {

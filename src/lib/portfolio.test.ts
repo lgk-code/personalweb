@@ -30,9 +30,16 @@ describe("portfolio content", () => {
       "GitHub 源码"
     );
     expect(portfolio.projects.find((project) => project.name === "AIFocus")?.links).toEqual([]);
-    expect(portfolio.projects.find((project) => project.name === "CodePath")?.links[0]?.href).toBe(
-      "https://github.com/lgk-code/codepath-extension/releases/latest"
-    );
+    expect(portfolio.projects.find((project) => project.name === "CodePath")?.links).toEqual([
+      {
+        label: "最新 release",
+        href: "https://github.com/lgk-code/codepath-extension/releases/latest",
+      },
+      {
+        label: "下载扩展包",
+        href: "https://github.com/lgk-code/codepath-extension/releases/latest/download/CodePath.zip",
+      },
+    ]);
   });
 
   it("documents project-backed evidence chains without private paths", () => {

@@ -60,6 +60,10 @@ export const portfolio = {
           label: "最新 release",
           href: "https://github.com/lgk-code/codepath-extension/releases/latest",
         },
+        {
+          label: "下载扩展包",
+          href: "https://github.com/lgk-code/codepath-extension/releases/latest/download/CodePath.zip",
+        },
       ],
     },
   ] satisfies Project[],
