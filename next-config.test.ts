@@ -2,6 +2,10 @@ import { describe, expect, it } from "vitest";
 import nextConfig from "./next.config";
 
 describe("next config", () => {
+  it("does not advertise the framework through X-Powered-By", () => {
+    expect(nextConfig.poweredByHeader).toBe(false);
+  });
+
   it("applies low-risk security headers to every route", async () => {
     const headers = await nextConfig.headers?.();
 

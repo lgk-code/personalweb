@@ -38,6 +38,7 @@ npm run check:assets
 npm run check:design
 npm run check:html
 npm run check:a11y
+npm run check:audit
 npm run scan:secrets
 npm run quality
 ```
@@ -47,7 +48,8 @@ npm run quality
 `npm run check:design` 会扫描设计红线，例如 viewport 字体缩放、渐变/orb/bokeh 装饰、默认脚手架素材和负 letter-spacing。
 `npm run check:html` 会在生产构建后检查首页静态 HTML 的主标题、关键章节、图片 alt、核心资产和敏感/模板痕迹。
 `npm run check:a11y` 会在生产构建后检查主 landmark、跳转链接、导航标签、焦点样式、图片 alt 和 reduced-motion 兜底。
-`npm run quality` 会串联资产同步、测试、lint、设计红线、构建、HTML 输出检查、可访问性检查和敏感信息扫描。
+`npm run check:audit` 会运行 npm audit，未知 moderate 及以上漏洞直接失败；当前已知 Next/PostCSS advisory 必须在 roadmap 中保留记录。
+`npm run quality` 会串联资产同步、测试、lint、设计红线、构建、HTML 输出检查、可访问性检查、敏感信息扫描和 audit 检查。
 
 GitHub Actions 会在 `main` push 和 pull request 上运行同一套质量门禁。
 

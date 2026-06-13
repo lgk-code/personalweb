@@ -6,21 +6,27 @@ const root = process.cwd();
 const ignoredDirectories = new Set([".git", ".next", "node_modules", "coverage"]);
 const textExtensions = new Set([
   ".css",
+  ".env",
   ".js",
   ".json",
   ".md",
   ".mjs",
   ".ts",
   ".tsx",
+  ".yaml",
+  ".yml",
 ]);
 
 const secretPatterns = [
-  /sk-[A-Za-z0-9_-]{20,}/,
+  /sk-(?:proj-)?[A-Za-z0-9_-]{20,}/,
+  /sk-ant-[A-Za-z0-9_-]{20,}/,
   /ghp_[A-Za-z0-9_]{20,}/,
+  /github_pat_[A-Za-z0-9_]{20,}/,
   /AIza[0-9A-Za-z_-]{20,}/,
   /AKIA[0-9A-Z]{16}/,
+  /eyJ[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{10,}/,
   /BEGIN [A-Z ]*PRIVATE KEY/,
-  /(password|api[_-]?key|token)\s*=\s*['"][^'"]+['"]/i,
+  /(password|api[_-]?key|token|secret)\s*[:=]\s*['"]?[A-Za-z0-9_./+=-]{12,}['"]?/i,
 ];
 
 const publicPathPatterns = [/\/home\/lgk\//, /\/mnt\/c\/Users\/logic\//, /D:\\/i];
@@ -39,7 +45,10 @@ async function collectFiles(directory) {
 
     if (entry.isDirectory()) {
       files.push(...(await collectFiles(fullPath)));
-    } else if (entry.isFile() && textExtensions.has(path.extname(entry.name))) {
+    } else if (
+      entry.isFile() &&
+      (textExtensions.has(path.extname(entry.name)) || entry.name.startsWith(".env"))
+    ) {
       files.push(fullPath);
     }
   }

@@ -21,7 +21,7 @@
 - A keyboard-visible skip link improves access to the project section.
 - Static accessibility checks cover landmarks, hash-link targets, focus outlines, reduced motion, labelled nav, and project image alt text.
 - Basic security headers are configured in `next.config.ts`.
-- `npm run quality` runs generated asset drift checks, test, lint, design redline checks, build, static HTML output checks, accessibility checks, and sensitive content scanning.
+- `npm run quality` runs generated asset drift checks, test, lint, design redline checks, build, static HTML output checks, accessibility checks, sensitive content scanning, and audit documentation checks.
 - GitHub Actions runs the same quality gate on `main` pushes and pull requests.
 - Dependabot is configured for npm and GitHub Actions updates.
 - `docs/REVIEW-RUBRIC.md` defines the three-agent final review scoring rules.
@@ -37,4 +37,4 @@
 
 Browser verification against `http://localhost:3000` was blocked by the Browser plugin enterprise network policy. Do not claim final visual acceptance until a real browser desktop and mobile screenshot review has been completed.
 
-`npm audit --audit-level=moderate` currently reports a PostCSS advisory through `next@16.2.9`'s internal dependency tree. `npm audit fix --force` proposes a breaking downgrade to an old Next.js version, so do not apply it automatically; revisit when a safe Next.js patch is available.
+`npm audit --audit-level=moderate` currently reports [GHSA-qx2v-qp2m-jg93](https://github.com/advisories/GHSA-qx2v-qp2m-jg93), a moderate PostCSS advisory fixed in `postcss@8.5.10`, through `next@16.2.9`'s internal dependency tree. The advisory is documented here because `npm audit fix --force` proposes a breaking downgrade to an old Next.js version; do not apply that automatically. `npm run check:audit` allows only this known advisory chain and fails on unknown moderate-or-higher advisories, so revisit when a safe Next.js patch is available.
