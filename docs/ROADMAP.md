@@ -9,7 +9,7 @@
 - Key PNG visuals are covered by asset metadata tests.
 - CodePath public screenshots were copied into `public/projects/` for visual project evidence.
 - Generated bitmap assets live at `public/projects/aifocus-signal.png` and `public/projects/hero-workbench.png`; both can be regenerated with `npm run assets:generate`.
-- Open Graph / Twitter metadata and a generated `/opengraph-image` PNG route are in place.
+- Open Graph / Twitter metadata and a statically generated `/opengraph-image` PNG route are in place.
 - Generated `/icon` and `src/app/favicon.ico` assets replace the scaffold favicon treatment.
 - Public site URL resolution is centralized for metadata, `robots.txt`, and `sitemap.xml`.
 - Metadata routes are covered by unit tests.
