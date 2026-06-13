@@ -26,6 +26,7 @@
 ## 2026-06-14 — Verification
 
 - Minimum local gate is `npm run quality`, which runs tests, lint, build, and sensitive content scanning.
+- Static HTML output checks are part of the local gate because browser screenshot verification can be temporarily unavailable in Codex.
 - Full delivery also requires browser screenshot verification and the three-role subagent review gate described in `AGENTS.md`.
 
 ## 2026-06-14 — Public Site URL

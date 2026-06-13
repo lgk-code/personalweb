@@ -9,8 +9,9 @@
     "lint": "eslint",
     "test": "vitest run",
     "assets:generate": "node scripts/generate-assets.mjs",
+    "check:html": "node scripts/check-html-output.mjs",
     "scan:secrets": "node scripts/scan-secrets.mjs",
-    "quality": "npm test && npm run lint && npm run build && npm run scan:secrets"
+    "quality": "npm test && npm run lint && npm run build && npm run check:html && npm run scan:secrets"
   },
   "dependencies": {
     "next": "16.2.9",
