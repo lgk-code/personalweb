@@ -39,7 +39,7 @@ npm run scan:secrets
 npm run quality
 ```
 
-当前测试覆盖 `src/lib/portfolio.ts` 的公开身份和项目展示事实，避免 AIFocus / CodePath 描述失真或泄露本机敏感路径。
+当前测试覆盖公开身份、项目展示事实、站点 URL 解析和关键 PNG 视觉资产，避免 AIFocus / CodePath 描述失真、站点 metadata 跑偏或资产被误替换。
 `npm run check:html` 会在生产构建后检查首页静态 HTML 的主标题、关键章节、图片 alt、核心资产和敏感/模板痕迹。
 `npm run quality` 会串联测试、lint、构建、HTML 输出检查和敏感信息扫描。
 

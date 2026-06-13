@@ -6,6 +6,7 @@
 - Git is initialized on `main` and `origin` points to `https://github.com/lgk-code/personalweb.git`.
 - The home page now has a first usable slice: project-backed hero, project showcase, evidence chain, working style, and contact links.
 - `AIFocus` and `CodePath` content is stored in `src/lib/portfolio.ts` and covered by `src/lib/portfolio.test.ts`.
+- Key PNG visuals are covered by asset metadata tests.
 - CodePath public screenshots were copied into `public/projects/` for visual project evidence.
 - Generated bitmap assets live at `public/projects/aifocus-signal.png` and `public/projects/hero-workbench.png`; both can be regenerated with `npm run assets:generate`.
 - Open Graph / Twitter metadata and a generated `/opengraph-image` PNG route are in place.
