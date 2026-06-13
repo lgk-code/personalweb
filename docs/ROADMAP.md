@@ -19,6 +19,7 @@
 - Basic security headers are configured in `next.config.ts`.
 - `npm run quality` runs generated asset drift checks, test, lint, build, static HTML output checks, and sensitive content scanning.
 - GitHub Actions runs the same quality gate on `main` pushes and pull requests.
+- `docs/REVIEW-RUBRIC.md` defines the three-agent final review scoring rules.
 - Latest local quality gate passed: `npm run quality`.
 
 ## Next Work
