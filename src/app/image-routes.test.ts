@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { contentType as appleIconContentType, size as appleIconSize } from "./apple-icon";
 import { contentType as iconContentType, size as iconSize } from "./icon";
 import {
   alt as openGraphAlt,
@@ -12,6 +13,14 @@ describe("image metadata routes", () => {
     expect(iconSize).toEqual({
       width: 64,
       height: 64,
+    });
+  });
+
+  it("keeps the apple icon route in a home-screen friendly size", () => {
+    expect(appleIconContentType).toBe("image/png");
+    expect(appleIconSize).toEqual({
+      width: 180,
+      height: 180,
     });
   });
 

@@ -35,6 +35,7 @@ const requiredText = [
   "https://schema.org",
   "github.com/lgk-code/codepath-extension/releases/latest",
   'rel="canonical"',
+  'rel="apple-touch-icon"',
   'meta name="application-name"',
   'link rel="author"',
   'meta name="author"',

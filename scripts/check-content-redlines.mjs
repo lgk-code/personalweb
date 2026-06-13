@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 
 const contentFiles = [
+  "src/app/apple-icon.tsx",
   "src/app/icon.tsx",
   "src/app/layout.tsx",
   "src/app/not-found.tsx",

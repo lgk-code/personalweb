@@ -183,6 +183,7 @@ try {
   );
   await assertTextRoute(baseUrl, "/sitemap.xml", 200, ["<urlset", "<loc>", "</loc>"], "application/xml");
   await assertTextRoute(baseUrl, "/missing-runtime-smoke", 404, ["这条路径还没被构建出来。"], "text/html");
+  await assertBinaryRoute(baseUrl, "/apple-icon", "image/png", 1_000);
   await assertBinaryRoute(baseUrl, "/favicon.ico", "image/x-icon", 1_000);
   await assertBinaryRoute(baseUrl, "/icon", "image/png", 500);
   await assertBinaryRoute(baseUrl, "/opengraph-image", "image/png", 10_000);

@@ -30,6 +30,7 @@ const appPathsManifest = readJson(appPathsManifestPath);
 const expectedStaticRoutes = [
   "/",
   "/_not-found",
+  "/apple-icon",
   "/favicon.ico",
   "/icon",
   "/opengraph-image",
@@ -38,6 +39,7 @@ const expectedStaticRoutes = [
 ];
 const expectedAppPaths = [
   "/_not-found/page",
+  "/apple-icon/route",
   "/favicon.ico/route",
   "/icon/route",
   "/opengraph-image/route",
