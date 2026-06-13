@@ -36,13 +36,16 @@ function StructuredData() {
 function AIFocusVisual() {
   return (
     <div className="project-visual asset-visual">
-      <Image
-        src="/projects/aifocus-signal.png"
-        alt="AIFocus 从 AI 信源到日报和 Agent Skill 的处理链路图"
-        width={1280}
-        height={760}
-        sizes="(min-width: 1024px) 42vw, 92vw"
-      />
+      <picture>
+        <source media="(max-width: 820px)" srcSet="/projects/aifocus-signal-mobile.png" />
+        <Image
+          src="/projects/aifocus-signal.png"
+          alt="AIFocus 从 AI 信源到日报和 Agent Skill 的处理链路图"
+          width={1280}
+          height={760}
+          sizes="(min-width: 1024px) 42vw, 92vw"
+        />
+      </picture>
     </div>
   );
 }
@@ -51,14 +54,17 @@ function CodePathVisual() {
   return (
     <div className="project-visual asset-visual screenshot-visual codepath-visual">
       <div className="codepath-visual-stack">
-        <Image
-          className="primary-shot"
-          src="/projects/codepath-browser.png"
-          alt="CodePath 在 GitHub 页面侧边栏中分析源码的截图"
-          width={1434}
-          height={1308}
-          sizes="(min-width: 1024px) 38vw, 92vw"
-        />
+        <picture>
+          <source media="(max-width: 820px)" srcSet="/projects/codepath-panel-mobile.png" />
+          <Image
+            className="primary-shot"
+            src="/projects/codepath-browser.png"
+            alt="CodePath 在 GitHub 页面侧边栏中分析源码的截图"
+            width={1434}
+            height={1308}
+            sizes="(min-width: 1024px) 38vw, 92vw"
+          />
+        </picture>
         <Image
           className="secondary-shot"
           src="/projects/codepath-mcp-comparison.png"

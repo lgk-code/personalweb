@@ -15,8 +15,18 @@ const visualAssets = [
     minHeight: 700,
   },
   {
+    file: "aifocus-signal-mobile.png",
+    minWidth: 740,
+    minHeight: 900,
+  },
+  {
     file: "codepath-browser.png",
     minWidth: 1200,
+    minHeight: 1000,
+  },
+  {
+    file: "codepath-panel-mobile.png",
+    minWidth: 880,
     minHeight: 1000,
   },
   {

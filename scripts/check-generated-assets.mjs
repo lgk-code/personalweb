@@ -4,6 +4,8 @@ import path from "node:path";
 
 const assetPaths = [
   "public/projects/aifocus-signal.png",
+  "public/projects/aifocus-signal-mobile.png",
+  "public/projects/codepath-panel-mobile.png",
   "public/projects/hero-workbench.png",
   "src/app/favicon.ico",
 ];

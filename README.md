@@ -64,6 +64,8 @@ npm run assets:generate
 该命令会生成：
 
 - `public/projects/aifocus-signal.png`：AIFocus 项目展示图。
+- `public/projects/aifocus-signal-mobile.png`：AIFocus 移动端竖版展示图。
+- `public/projects/codepath-panel-mobile.png`：CodePath 移动端侧栏聚焦裁剪图。
 - `public/projects/hero-workbench.png`：由 AIFocus 视觉和 CodePath 截图合成的首屏背景图。
 - `src/app/favicon.ico`：自有 `lgk` favicon，避免保留脚手架默认图标。
 

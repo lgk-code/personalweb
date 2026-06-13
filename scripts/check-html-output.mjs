@@ -40,7 +40,9 @@ const requiredText = [
 const requiredAssets = [
   "/projects/hero-workbench.png",
   "/projects/aifocus-signal.png",
+  "/projects/aifocus-signal-mobile.png",
   "/projects/codepath-browser.png",
+  "/projects/codepath-panel-mobile.png",
   "/projects/codepath-mcp-comparison.png",
 ];
 

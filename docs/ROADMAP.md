@@ -10,6 +10,7 @@
 - A CodePath public screenshot was copied into `public/projects/` for visual project evidence.
 - A CodePath MCP comparison crop is included as a second public-safe screenshot, with the original local path area excluded.
 - Generated bitmap assets live at `public/projects/aifocus-signal.png` and `public/projects/hero-workbench.png`; both can be regenerated with `npm run assets:generate`.
+- Mobile-specific public assets are generated for AIFocus and CodePath so project evidence remains legible on narrow viewports.
 - Open Graph / Twitter metadata and a statically generated `/opengraph-image` PNG route are in place.
 - Generated `/icon` and `src/app/favicon.ico` assets replace the scaffold favicon treatment.
 - Public site URL resolution is centralized for metadata, `robots.txt`, and `sitemap.xml`.

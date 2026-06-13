@@ -5,7 +5,9 @@ import sharp from "sharp";
 const outputDir = path.join(process.cwd(), "public", "projects");
 const appDir = path.join(process.cwd(), "src", "app");
 const aifocusPath = path.join(outputDir, "aifocus-signal.png");
+const aifocusMobilePath = path.join(outputDir, "aifocus-signal-mobile.png");
 const codePathBrowserPath = path.join(outputDir, "codepath-browser.png");
+const codePathPanelPath = path.join(outputDir, "codepath-panel-mobile.png");
 const heroPath = path.join(outputDir, "hero-workbench.png");
 const faviconPath = path.join(appDir, "favicon.ico");
 
@@ -59,6 +61,34 @@ const svg = `
 </svg>
 `;
 
+const mobileStageCards = stages
+  .map(([index, title, body], position) => {
+    const y = 174 + position * 118;
+    return `
+      <g>
+        <rect x="56" y="${y}" width="648" height="88" rx="8" fill="#fffdf8" stroke="#181713" stroke-width="2" />
+        <text x="84" y="${y + 38}" fill="#286a4b" font-size="20" font-weight="700" font-family="Geist Mono, ui-monospace, monospace">${index}</text>
+        <text x="154" y="${y + 38}" fill="#181713" font-size="28" font-weight="760" font-family="Geist, Arial, sans-serif">${title}</text>
+        <text x="154" y="${y + 66}" fill="#5f5b52" font-size="18" font-family="Geist, Arial, sans-serif">${body}</text>
+      </g>
+    `;
+  })
+  .join("");
+
+const mobileSvg = `
+<svg width="760" height="940" viewBox="0 0 760 940" xmlns="http://www.w3.org/2000/svg">
+  <rect width="760" height="940" fill="#eee5d5" />
+  <rect x="28" y="28" width="704" height="884" rx="14" fill="#f9f7ef" stroke="#181713" stroke-width="3" />
+  <rect x="56" y="58" width="648" height="84" rx="8" fill="#151713" />
+  <text x="84" y="104" fill="#f7f3ea" font-size="30" font-weight="760" font-family="Geist, Arial, sans-serif">AIFocus signal path</text>
+  <text x="84" y="130" fill="#c8d9a2" font-size="16" font-family="Geist Mono, ui-monospace, monospace">feeds to daily signal, API, RSS and Skill</text>
+  ${mobileStageCards}
+  <rect x="56" y="884" width="190" height="18" rx="4" fill="#286a4b" />
+  <rect x="268" y="884" width="120" height="18" rx="4" fill="#b3261e" />
+  <rect x="410" y="884" width="216" height="18" rx="4" fill="#285f8f" />
+</svg>
+`;
+
 function createIco(pngBuffers, sizes) {
   const header = Buffer.alloc(6);
   header.writeUInt16LE(0, 0);
@@ -101,6 +131,13 @@ async function createFaviconFrame(size) {
 
 await mkdir(outputDir, { recursive: true });
 await sharp(Buffer.from(svg)).png().toFile(aifocusPath);
+await sharp(Buffer.from(mobileSvg)).png().toFile(aifocusMobilePath);
+await sharp(codePathBrowserPath)
+  .extract({ left: 376, top: 110, width: 1012, height: 1170 })
+  .flatten({ background: "#ffffff" })
+  .resize({ width: 900 })
+  .png()
+  .toFile(codePathPanelPath);
 
 const aifocusHero = await sharp(aifocusPath)
   .resize({ width: 780 })
@@ -145,5 +182,7 @@ const faviconFrames = await Promise.all(faviconSizes.map((size) => createFavicon
 await writeFile(faviconPath, createIco(faviconFrames, faviconSizes));
 
 console.log("Generated public/projects/aifocus-signal.png");
+console.log("Generated public/projects/aifocus-signal-mobile.png");
+console.log("Generated public/projects/codepath-panel-mobile.png");
 console.log("Generated public/projects/hero-workbench.png");
 console.log("Generated src/app/favicon.ico");

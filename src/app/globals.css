@@ -272,8 +272,17 @@ a:focus-visible {
   gap: 0.85rem;
 }
 
+.asset-visual picture,
 .asset-visual img {
   width: 100%;
+}
+
+.asset-visual picture {
+  display: flex;
+  justify-content: center;
+}
+
+.asset-visual img {
   height: auto;
   max-height: 480px;
   border: 1px solid rgba(24, 23, 19, 0.22);
@@ -551,6 +560,22 @@ a:focus-visible {
     min-height: 320px;
     border-right: 0;
     border-bottom: 1px solid var(--ink);
+  }
+
+  .asset-visual img {
+    max-height: 560px;
+  }
+
+  .codepath-visual-stack {
+    width: min(100%, 420px);
+  }
+
+  .codepath-visual-stack .primary-shot {
+    max-height: 520px;
+  }
+
+  .codepath-visual-stack .secondary-shot {
+    display: none;
   }
 
   .method-list li {
