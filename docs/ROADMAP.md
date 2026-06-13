@@ -10,7 +10,7 @@
 - CodePath public screenshots were copied into `public/projects/` for visual project evidence.
 - Generated bitmap assets live at `public/projects/aifocus-signal.png` and `public/projects/hero-workbench.png`; both can be regenerated with `npm run assets:generate`.
 - Open Graph / Twitter metadata and a generated `/opengraph-image` PNG route are in place.
-- A generated `/icon` PNG route replaces the scaffold favicon treatment.
+- Generated `/icon` and `src/app/favicon.ico` assets replace the scaffold favicon treatment.
 - Public site URL resolution is centralized for metadata, `robots.txt`, and `sitemap.xml`.
 - Homepage JSON-LD describes the public profile, showcased projects, and repository relationship.
 - A custom `not-found` page replaces the default unmatched-route experience.

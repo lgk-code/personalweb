@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
 
@@ -30,5 +31,15 @@ describe("public visual assets", () => {
     expect(metadata.width).toBeGreaterThanOrEqual(asset.minWidth);
     expect(metadata.height).toBeGreaterThanOrEqual(asset.minHeight);
     expect(stats.isOpaque).toBe(true);
+  });
+
+  it("keeps favicon as a compact generated ICO", () => {
+    const filePath = path.join(process.cwd(), "src", "app", "favicon.ico");
+    const icon = readFileSync(filePath);
+
+    expect(icon.readUInt16LE(0)).toBe(0);
+    expect(icon.readUInt16LE(2)).toBe(1);
+    expect(icon.readUInt16LE(4)).toBe(4);
+    expect(statSync(filePath).size).toBeLessThan(10_000);
   });
 });

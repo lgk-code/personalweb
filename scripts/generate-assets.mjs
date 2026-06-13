@@ -1,11 +1,13 @@
-import { mkdir } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 
 const outputDir = path.join(process.cwd(), "public", "projects");
+const appDir = path.join(process.cwd(), "src", "app");
 const aifocusPath = path.join(outputDir, "aifocus-signal.png");
 const codePathBrowserPath = path.join(outputDir, "codepath-browser.png");
 const heroPath = path.join(outputDir, "hero-workbench.png");
+const faviconPath = path.join(appDir, "favicon.ico");
 
 const stages = [
   ["01", "Sources", "T1 feeds and trusted AI channels"],
@@ -57,6 +59,46 @@ const svg = `
 </svg>
 `;
 
+function createIco(pngBuffers, sizes) {
+  const header = Buffer.alloc(6);
+  header.writeUInt16LE(0, 0);
+  header.writeUInt16LE(1, 2);
+  header.writeUInt16LE(pngBuffers.length, 4);
+
+  let imageOffset = 6 + pngBuffers.length * 16;
+  const entries = pngBuffers.map((pngBuffer, index) => {
+    const entry = Buffer.alloc(16);
+    const size = sizes[index];
+    entry.writeUInt8(size >= 256 ? 0 : size, 0);
+    entry.writeUInt8(size >= 256 ? 0 : size, 1);
+    entry.writeUInt8(0, 2);
+    entry.writeUInt8(0, 3);
+    entry.writeUInt16LE(1, 4);
+    entry.writeUInt16LE(32, 6);
+    entry.writeUInt32LE(pngBuffer.length, 8);
+    entry.writeUInt32LE(imageOffset, 12);
+    imageOffset += pngBuffer.length;
+    return entry;
+  });
+
+  return Buffer.concat([header, ...entries, ...pngBuffers]);
+}
+
+async function createFaviconFrame(size) {
+  const strokeWidth = Math.max(1, Math.round(size * 0.07));
+  const inset = Math.max(1, Math.round(size * 0.11));
+  const fontSize = Math.round(size * 0.36);
+  const iconSvg = `
+  <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
+    <rect width="${size}" height="${size}" fill="#151713" />
+    <rect x="${inset}" y="${inset}" width="${size - inset * 2}" height="${size - inset * 2}" rx="${Math.max(1, Math.round(size * 0.08))}" fill="none" stroke="#fffef8" stroke-width="${strokeWidth}" />
+    <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" fill="#fffef8" font-size="${fontSize}" font-weight="800" font-family="Arial, sans-serif">lgk</text>
+  </svg>
+  `;
+
+  return sharp(Buffer.from(iconSvg)).png().toBuffer();
+}
+
 await mkdir(outputDir, { recursive: true });
 await sharp(Buffer.from(svg)).png().toFile(aifocusPath);
 
@@ -101,5 +143,10 @@ await sharp(Buffer.from(heroSvg))
   .png()
   .toFile(heroPath);
 
+const faviconSizes = [16, 32, 48, 64];
+const faviconFrames = await Promise.all(faviconSizes.map((size) => createFaviconFrame(size)));
+await writeFile(faviconPath, createIco(faviconFrames, faviconSizes));
+
 console.log("Generated public/projects/aifocus-signal.png");
 console.log("Generated public/projects/hero-workbench.png");
+console.log("Generated src/app/favicon.ico");

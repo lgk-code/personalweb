@@ -59,6 +59,7 @@ npm run assets:generate
 
 - `public/projects/aifocus-signal.png`：AIFocus 项目展示图。
 - `public/projects/hero-workbench.png`：由 AIFocus 视觉和 CodePath 截图合成的首屏背景图。
+- `src/app/favicon.ico`：自有 `lgk` favicon，避免保留脚手架默认图标。
 
 CodePath 项目展示使用相邻项目中已有的公开截图。
 
