@@ -94,6 +94,9 @@ function ProjectArticle({ project }: { project: Project }) {
 }
 
 export default function Home() {
+  const codePathReleaseLink = portfolio.projects.find((project) => project.name === "CodePath")
+    ?.links[0];
+
   return (
     <main>
       <StructuredData />
@@ -184,9 +187,9 @@ export default function Home() {
           <h2>接下来会把这个站点继续打磨到能经受截图、代码和多角色评审。</h2>
           <div className="contact-actions">
             <a href={site.profileUrl}>GitHub</a>
-            <a href="https://github.com/lgk-code/codepath-extension/releases/latest">
-              CodePath release
-            </a>
+            {codePathReleaseLink ? (
+              <a href={codePathReleaseLink.href}>{codePathReleaseLink.label}</a>
+            ) : null}
           </div>
         </div>
       </section>
