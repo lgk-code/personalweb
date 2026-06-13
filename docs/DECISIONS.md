@@ -27,3 +27,9 @@
 
 - Minimum local gate is `npm run quality`, which runs tests, lint, build, and sensitive content scanning.
 - Full delivery also requires browser screenshot verification and the three-role subagent review gate described in `AGENTS.md`.
+
+## 2026-06-14 — Public Site URL
+
+- Keep the GitHub repository URL separate from the public site URL.
+- Resolve the public site URL from `NEXT_PUBLIC_SITE_URL`, then Vercel deployment variables, then local development.
+- Use the resolved site URL for metadata, `robots.txt`, and `sitemap.xml`.

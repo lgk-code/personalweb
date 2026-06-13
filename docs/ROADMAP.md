@@ -10,6 +10,7 @@
 - Generated bitmap assets live at `public/projects/aifocus-signal.png` and `public/projects/hero-workbench.png`; both can be regenerated with `npm run assets:generate`.
 - Open Graph / Twitter metadata and a generated `/opengraph-image` PNG route are in place.
 - A generated `/icon` PNG route replaces the scaffold favicon treatment.
+- Public site URL resolution is centralized for metadata, `robots.txt`, and `sitemap.xml`.
 - `npm run quality` runs test, lint, build, and sensitive content scanning.
 - Latest local quality gate passed: `npm run quality`.
 
