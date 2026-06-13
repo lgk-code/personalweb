@@ -31,6 +31,7 @@ const requiredText = [
   "Skip to projects",
   "application/ld+json",
   "https://schema.org",
+  "github.com/lgk-code/codepath-extension/releases/latest",
   'rel="canonical"',
   "每个项目都要能说清楚输入、处理和输出。",
 ];
