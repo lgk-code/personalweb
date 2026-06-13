@@ -8,7 +8,7 @@ export default function NotFound() {
         <p className="section-kicker">404 / Unmapped route</p>
         <h1>这条路径还没被构建出来。</h1>
         <p>
-          先回到首页看 AIFocus、CodePath 和当前个人网站的构建证据；错误链接可以从仓库继续追踪。
+          先回到首页看 AIFocus、CodePath 和当前个人网站的构建证据；公开项目可以从 GitHub 继续追踪。
         </p>
         <div className="not-found-actions">
           <Link href="/">Back home</Link>
