@@ -7,7 +7,7 @@
 - The home page now has a first usable slice: project-backed hero, project showcase, evidence chain, working style, and contact links.
 - `AIFocus` and `CodePath` content is stored in `src/lib/portfolio.ts` and covered by `src/lib/portfolio.test.ts`.
 - Project cards include short field notes so each showcased system carries a little more working-context signal than a generic portfolio card.
-- Key PNG visuals are covered by asset metadata tests.
+- Key PNG visuals are covered by asset metadata and byte-budget tests.
 - A CodePath public screenshot was copied into `public/projects/` for visual project evidence.
 - A CodePath MCP comparison crop is included as a second public-safe screenshot, with the original local path area excluded.
 - Generated bitmap assets live at `public/projects/aifocus-signal.png` and `public/projects/hero-workbench.png`; both can be regenerated with `npm run assets:generate`.
@@ -19,8 +19,8 @@
 - Metadata routes are covered by unit tests.
 - Homepage metadata includes canonical, author, creator, publisher, Open Graph, Twitter, and JSON-LD signals.
 - Homepage JSON-LD describes the public profile and showcased projects.
-- Public page links avoid private or not-yet-public GitHub repositories.
-- Live public link checks are available with `npm run check:links:live` for final review passes.
+- Public page links avoid private or not-yet-public GitHub repositories, while exposing the GitHub profile, the CodePath release page, and the CodePath extension download.
+- Live public link checks are available with `npm run check:links:live` for final review passes; redirected signed query strings are stripped from command output.
 - A custom `not-found` page replaces the default unmatched-route experience.
 - A keyboard-visible skip link improves access to the project section.
 - Static accessibility checks cover landmarks, hash-link targets, focus outlines, reduced motion, labelled nav, and project image alt text.
@@ -28,6 +28,7 @@
 - `npm run quality` runs generated asset drift checks, test, lint, design redline checks, content redline checks, contrast checks, public asset privacy scans, build, static HTML output checks, route output checks, runtime smoke checks, accessibility checks, public link allowlist checks, project docs consistency checks, sensitive content scanning, and audit checks.
 - GitHub Actions runs the same quality gate on `main` pushes and pull requests.
 - Dependabot is configured for npm and GitHub Actions updates.
+- Runtime dependencies are exact-pinned; `.npmrc` sets `save-exact=true` to preserve that convention during future installs.
 - `docs/REVIEW-RUBRIC.md` defines the three-agent final review scoring rules.
 - Latest local quality gate passed: `npm run quality`.
 

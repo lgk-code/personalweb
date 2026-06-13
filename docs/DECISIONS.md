@@ -38,17 +38,24 @@
 - Content redline checks scan source files for filler/template wording so real project copy does not regress into placeholders.
 - Contrast checks statically enforce the main text/background color pairs at WCAG AA regular-text contrast.
 - Public asset privacy scans inspect printable metadata in image and icon files for local paths or credential markers.
+- Asset tests enforce both useful dimensions and byte budgets for public PNG visuals.
 - Route output checks read the production build manifests to keep the homepage, 404, image routes, `manifest.webmanifest`, `robots.txt`, and `sitemap.xml` static.
 - Runtime smoke checks start `next start` on an ephemeral local port and verify key routes, `manifest.webmanifest`, and actual security response headers.
 - Static accessibility output checks cover landmarks, skip targets, labelled navigation, focus outlines, reduced motion, image alt text, and link safety.
-- Public link checks use a static allowlist for rendered homepage HTTPS links and prevent not-yet-public repository links from appearing.
-- Live public link checks are available as an opt-in final-review command, but stay out of `npm run quality` to avoid network flakes in CI. The script uses `curl` so WSL proxy settings are honored consistently.
+- Public link checks use a static allowlist for rendered homepage HTTPS links and prevent not-yet-public repository links from appearing. The allowlist includes the GitHub profile, the CodePath release page, and the CodePath extension download.
+- Live public link checks are available as an opt-in final-review command, but stay out of `npm run quality` to avoid network flakes in CI. The script uses `curl` so WSL proxy settings are honored consistently, and strips query/hash from redirected URLs before printing results.
 - Project docs consistency checks keep the repository binding, living `AGENTS.md` rule, `/neat` context-hygiene rule, real browser screenshot requirement, and three-agent final review gate from disappearing by accident.
 - Audit checks require zero moderate-or-higher advisories.
 - Pin `next` to `16.2.9` and use an npm override for its internal `postcss` dependency until Next ships the patched PostCSS version upstream.
 - Mirror the same gate in GitHub Actions for `main` pushes and pull requests.
 - Use Dependabot PRs for npm and GitHub Actions updates instead of ad hoc dependency drift.
 - Full delivery also requires browser screenshot verification and the three-role subagent review gate described in `AGENTS.md`.
+
+## 2026-06-14 — Dependency Hygiene
+
+- Keep runtime dependencies exact-pinned in `package.json`.
+- Use `.npmrc` with `save-exact=true` so future `npm install` commands preserve exact pins.
+- Apply low-risk patch updates only after `npm run quality` passes.
 
 ## 2026-06-14 — Public Site URL
 

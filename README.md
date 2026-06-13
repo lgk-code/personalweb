@@ -51,7 +51,7 @@ npm run scan:secrets
 npm run quality
 ```
 
-当前测试覆盖公开身份、项目展示事实、站点 URL 解析、metadata routes 和关键 PNG/ICO 视觉资产，避免 AIFocus / CodePath 描述失真、站点 metadata 跑偏或资产被误替换。
+当前测试覆盖公开身份、项目展示事实、站点 URL 解析、metadata routes 和关键 PNG/ICO 视觉资产尺寸/体量，避免 AIFocus / CodePath 描述失真、站点 metadata 跑偏或资产被误替换。
 `npm run check:assets` 会在临时目录重新生成关键 PNG/ICO，并确认仓库里的生成结果没有漂移。
 `npm run check:design` 会扫描设计红线，例如 viewport 字体缩放、渐变/orb/bokeh 装饰、默认脚手架素材和负 letter-spacing。
 `npm run check:content` 会扫描源码里的 lorem、placeholder、dummy、template 等模板痕迹，避免页面内容退回占位状态。
