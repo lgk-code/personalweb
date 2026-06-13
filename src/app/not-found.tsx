@@ -11,7 +11,7 @@ export default function NotFound() {
           先回到首页看 AIFocus、CodePath 和当前个人网站的构建证据；公开项目可以从 GitHub 继续追踪。
         </p>
         <div className="not-found-actions">
-          <Link href="/">Back home</Link>
+          <Link href="/">返回首页</Link>
           <a href={site.profileUrl}>GitHub</a>
         </div>
       </section>

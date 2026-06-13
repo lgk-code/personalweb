@@ -60,7 +60,7 @@ const requiredAssets = [
 ];
 
 const requiredIds = ['id="projects"', 'id="method"', 'id="contact"', 'id="evidence-heading"'];
-const requiredNotFoundText = ["这条路径还没被构建出来。", "Back home"];
+const requiredNotFoundText = ["这条路径还没被构建出来。", "返回首页"];
 
 function hasAssetReference(asset) {
   return html.includes(asset) || html.includes(encodeURIComponent(asset));
