@@ -8,26 +8,31 @@ const visualAssets = [
     file: "hero-workbench.png",
     minWidth: 1800,
     minHeight: 1000,
+    maxBytes: 450_000,
   },
   {
     file: "aifocus-signal.png",
     minWidth: 1200,
     minHeight: 700,
+    maxBytes: 120_000,
   },
   {
     file: "aifocus-signal-mobile.png",
     minWidth: 740,
     minHeight: 900,
+    maxBytes: 120_000,
   },
   {
     file: "codepath-browser.png",
     minWidth: 1200,
     minHeight: 1000,
+    maxBytes: 400_000,
   },
   {
     file: "codepath-panel-mobile.png",
     minWidth: 880,
     minHeight: 1000,
+    maxBytes: 450_000,
   },
   {
     file: "codepath-mcp-comparison.png",
@@ -35,6 +40,7 @@ const visualAssets = [
     minHeight: 400,
     maxWidth: 900,
     maxHeight: 500,
+    maxBytes: 90_000,
   },
 ];
 
@@ -56,6 +62,7 @@ describe("public visual assets", () => {
       expect(metadata.height).toBeLessThanOrEqual(asset.maxHeight);
     }
 
+    expect(statSync(filePath).size).toBeLessThanOrEqual(asset.maxBytes);
     expect(stats.isOpaque).toBe(true);
   });
 
