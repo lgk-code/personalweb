@@ -15,9 +15,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  applicationName: site.handle,
   metadataBase: getSiteUrl(),
   title: site.title,
   description: site.description,
+  alternates: {
+    canonical: "/",
+  },
+  authors: [
+    {
+      name: site.handle,
+      url: site.profileUrl,
+    },
+  ],
+  creator: site.handle,
+  publisher: site.handle,
   openGraph: {
     title: site.title,
     description: site.shareDescription,

@@ -13,6 +13,7 @@
 - Generated `/icon` and `src/app/favicon.ico` assets replace the scaffold favicon treatment.
 - Public site URL resolution is centralized for metadata, `robots.txt`, and `sitemap.xml`.
 - Metadata routes are covered by unit tests.
+- Homepage metadata includes canonical, author, creator, publisher, Open Graph, Twitter, and JSON-LD signals.
 - Homepage JSON-LD describes the public profile, showcased projects, and repository relationship.
 - A custom `not-found` page replaces the default unmatched-route experience.
 - A keyboard-visible skip link improves access to the project section.
