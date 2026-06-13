@@ -26,7 +26,7 @@ http://localhost:3000
 
 ## 部署 URL
 
-生产环境优先通过 `NEXT_PUBLIC_SITE_URL` 指定公开站点地址；未设置时会依次使用 Vercel 自动注入的生产/预览地址，本地开发优先回退到 `http://localhost:$PORT`，未设置 `PORT` 时使用 `http://localhost:3000`。`/robots.txt`、`/sitemap.xml` 和分享图 metadata 都使用同一套解析逻辑。
+生产环境优先通过 `NEXT_PUBLIC_SITE_URL` 指定公开站点地址；未设置时会依次使用 Vercel 自动注入的生产/预览地址，本地开发优先回退到 `http://localhost:$PORT`，未设置 `PORT` 时使用 `http://localhost:3000`。配置值会归一到站点 origin，移除 path、query 和 hash；`/robots.txt`、`/sitemap.xml` 和分享图 metadata 都使用同一套解析逻辑。
 
 ## 验证
 
@@ -51,7 +51,7 @@ npm run quality
 ```
 
 当前测试覆盖公开身份、项目展示事实、站点 URL 解析、metadata routes 和关键 PNG/ICO 视觉资产，避免 AIFocus / CodePath 描述失真、站点 metadata 跑偏或资产被误替换。
-`npm run check:assets` 会重新生成关键 PNG，并确认仓库里的生成结果没有漂移。
+`npm run check:assets` 会在临时目录重新生成关键 PNG/ICO，并确认仓库里的生成结果没有漂移。
 `npm run check:design` 会扫描设计红线，例如 viewport 字体缩放、渐变/orb/bokeh 装饰、默认脚手架素材和负 letter-spacing。
 `npm run check:content` 会扫描源码里的 lorem、placeholder、dummy、template 等模板痕迹，避免页面内容退回占位状态。
 `npm run check:contrast` 会静态检查主要文字/背景配色，要求核心文本组合满足 WCAG AA 常规文本对比度。
