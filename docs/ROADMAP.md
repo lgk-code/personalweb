@@ -34,6 +34,10 @@
 - When browser access to localhost is available, capture desktop and mobile screenshots.
 - Before final delivery, run the three independent subagent reviews required by `AGENTS.md`.
 
+## Midreview Notes
+
+2026-06-14 static-only subagent midreview scores were 88 (vibe coder), 86 (native design), and 82 (destructive quality). Follow-up fixes removed competing hero asset text, localized the skip link, made project proof points name AIFocus/CodePath directly, added mobile-specific project visuals, strengthened secret/audit checks, disabled `X-Powered-By`, and made local site URLs respect `PORT`. These reviews do not count as final acceptance because real browser desktop/mobile screenshots are still missing.
+
 ## Known Verification Gap
 
 Browser verification against `http://localhost:3000` was blocked by the Browser plugin enterprise network policy. Do not claim final visual acceptance until a real browser desktop and mobile screenshot review has been completed.
