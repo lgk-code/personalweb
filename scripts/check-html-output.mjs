@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 
 const htmlPath = path.join(process.cwd(), ".next", "server", "app", "index.html");
+const notFoundHtmlPath = path.join(process.cwd(), ".next", "server", "app", "_not-found.html");
 
 function fail(message) {
   console.error(`HTML output check failed: ${message}`);
@@ -12,7 +13,13 @@ if (!existsSync(htmlPath)) {
   fail(`missing ${path.relative(process.cwd(), htmlPath)}; run npm run build first`);
 }
 
+if (!existsSync(notFoundHtmlPath)) {
+  fail(`missing ${path.relative(process.cwd(), notFoundHtmlPath)}; run npm run build first`);
+}
+
 const html = readFileSync(htmlPath, "utf8");
+const notFoundHtml = readFileSync(notFoundHtmlPath, "utf8");
+const combinedHtml = `${html}\n${notFoundHtml}`;
 const imageTags = html.match(/<img\b[^>]*>/g) ?? [];
 const h1Count = (html.match(/<h1\b/g) ?? []).length;
 
@@ -35,6 +42,7 @@ const requiredAssets = [
 ];
 
 const requiredIds = ['id="projects"', 'id="method"', 'id="contact"', 'id="evidence-heading"'];
+const requiredNotFoundText = ["这条路径还没被构建出来。", "Back home"];
 
 function hasAssetReference(asset) {
   return html.includes(asset) || html.includes(encodeURIComponent(asset));
@@ -62,6 +70,12 @@ for (const id of requiredIds) {
   }
 }
 
+for (const text of requiredNotFoundText) {
+  if (!notFoundHtml.includes(text)) {
+    fail(`missing required not-found text: ${text}`);
+  }
+}
+
 if (imageTags.length < 3) {
   fail(`expected at least three rendered images, found ${imageTags.length}`);
 }
@@ -81,8 +95,8 @@ if (!imageTags.some((tag) => tag.includes('alt="CodePath'))) {
 }
 
 if (
-  /\/home\/lgk|API key|token|password|next\.svg|vercel\.svg|github\.com\/lgk-code\/AIFocus/i.test(
-    html
+  /\/home\/lgk|API key|token|password|next\.svg|vercel\.svg|github\.com\/lgk-code\/AIFocus|github\.com\/lgk-code\/personalweb/i.test(
+    combinedHtml
   )
 ) {
   fail("found sensitive, private, or scaffold-only text in rendered HTML");

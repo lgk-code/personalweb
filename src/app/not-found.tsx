@@ -12,7 +12,7 @@ export default function NotFound() {
         </p>
         <div className="not-found-actions">
           <Link href="/">Back home</Link>
-          <a href={site.repositoryUrl}>Repository</a>
+          <a href={site.profileUrl}>GitHub</a>
         </div>
       </section>
     </main>
