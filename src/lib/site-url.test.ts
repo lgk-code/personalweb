@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { getSiteUrl } from "./site-url";
 
-const SITE_URL_KEYS = ["NEXT_PUBLIC_SITE_URL", "VERCEL_PROJECT_PRODUCTION_URL", "VERCEL_URL"];
+const SITE_URL_KEYS = ["NEXT_PUBLIC_SITE_URL", "VERCEL_PROJECT_PRODUCTION_URL", "VERCEL_URL", "PORT"];
 const originalValues = new Map(SITE_URL_KEYS.map((key) => [key, process.env[key]]));
 
 function clearSiteUrlEnv() {
@@ -46,6 +46,18 @@ describe("getSiteUrl", () => {
 
   it("uses localhost when no deploy URL is available", () => {
     process.env.NEXT_PUBLIC_SITE_URL = "://broken";
+
+    expect(getSiteUrl().toString()).toBe("http://localhost:3000/");
+  });
+
+  it("uses the local PORT when no deploy URL is available", () => {
+    process.env.PORT = "3001";
+
+    expect(getSiteUrl().toString()).toBe("http://localhost:3001/");
+  });
+
+  it("ignores invalid local PORT values", () => {
+    process.env.PORT = "not-a-port";
 
     expect(getSiteUrl().toString()).toBe("http://localhost:3000/");
   });
