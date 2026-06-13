@@ -133,6 +133,12 @@ a {
   text-transform: uppercase;
 }
 
+.hero-section .eyebrow,
+.evidence-section .section-kicker,
+.not-found-page .section-kicker {
+  color: #ffb4a8;
+}
+
 .hero-content h1 {
   margin: 0.8rem 0 1rem;
   max-width: 920px;
