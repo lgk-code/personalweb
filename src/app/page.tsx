@@ -105,6 +105,26 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="evidence-section" aria-labelledby="evidence-heading">
+        <div className="section-shell evidence-layout">
+          <div>
+            <p className="section-kicker">Evidence chain</p>
+            <h2 id="evidence-heading">每个项目都要能说清楚输入、处理和输出。</h2>
+          </div>
+          <ul className="evidence-list">
+            {portfolio.evidenceChains.map((chain) => (
+              <li key={chain.label}>
+                <span>{chain.label}</span>
+                <div>
+                  <h3>{chain.title}</h3>
+                  <p>{chain.body}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section className="method-section" id="method">
         <div className="section-shell method-layout">
           <div>

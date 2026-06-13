@@ -65,4 +65,21 @@ export const portfolio = {
     "用工程化验证把 vibe 变成可复现质量",
     "让 agent、工具和人各做自己最擅长的部分",
   ],
+  evidenceChains: [
+    {
+      label: "AIFocus",
+      title: "从高噪声信源到可消费的信息产品",
+      body: "T1 / T1.5 / T2 信源进入抓取、AI 相关性预筛、标题摘要分类、多维评分、事件聚类和主条选择，最后输出 Web、RSS、REST API 和 Skill。",
+    },
+    {
+      label: "CodePath",
+      title: "从 GitHub 仓库到可追问的源码理解路径",
+      body: "浏览器侧栏覆盖项目概览、功能路径、当前文件解释、连续追问和推荐问题；MCP Server 则把同一套分析能力交给 OpenClaw 兼容 agent。",
+    },
+    {
+      label: "personalweb",
+      title: "从作品材料到可审查的个人网站",
+      body: "页面只使用可公开事实和生成/公开截图，配合测试、lint、构建、敏感信息扫描、真实截图和三角色终审作为交付闭环。",
+    },
+  ],
 };

@@ -26,4 +26,20 @@ describe("portfolio content", () => {
       "GitHub 源码"
     );
   });
+
+  it("documents project-backed evidence chains without private paths", () => {
+    expect(portfolio.evidenceChains).toHaveLength(3);
+    expect(portfolio.evidenceChains.map((chain) => chain.label)).toEqual([
+      "AIFocus",
+      "CodePath",
+      "personalweb",
+    ]);
+    expect(portfolio.evidenceChains[0].body).toContain("RSS");
+    expect(portfolio.evidenceChains[0].body).toContain("Skill");
+    expect(portfolio.evidenceChains[1].body).toContain("MCP");
+
+    for (const chain of portfolio.evidenceChains) {
+      expect(chain.body).not.toMatch(/\/home\/lgk|API key|token|password/i);
+    }
+  });
 });
