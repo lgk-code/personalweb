@@ -2,7 +2,7 @@
 
 ## 2026-06-14 — Use Next.js App Router
 
-- Use Next.js 16, React 19, TypeScript, and Tailwind CSS for the first implementation.
+- Use Next.js 16, React 19, TypeScript, and hand-written CSS for the first implementation.
 - Keep the site mostly static for now; project content lives in typed local data rather than a CMS.
 - Use App Router files under `src/app/`.
 

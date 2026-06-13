@@ -6,7 +6,7 @@
 https://github.com/lgk-code/personalweb
 ```
 
-当前版本是一个 Next.js / TypeScript / Tailwind CSS 个人首页切片，重点展示两个真实项目：
+当前版本是一个 Next.js / TypeScript / 手写 CSS 个人首页切片，重点展示两个真实项目：
 
 - **AIFocus**：AI 信息精选、日报、RSS、REST API 和 Agent Skill 接入平台。
 - **CodePath**：面向 GitHub 源码阅读的 WXT / React / TypeScript 浏览器扩展。
