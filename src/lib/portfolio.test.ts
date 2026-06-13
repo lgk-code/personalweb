@@ -10,8 +10,10 @@ describe("portfolio content", () => {
 
   it("features AIFocus and CodePath with accurate, non-sensitive summaries", () => {
     const projectNames = portfolio.projects.map((project) => project.name);
+    const projectVisuals = portfolio.projects.map((project) => project.visual);
 
     expect(projectNames).toEqual(expect.arrayContaining(["AIFocus", "CodePath"]));
+    expect(projectVisuals).toEqual(["aifocus", "codepath"]);
     expect(portfolio.projects).toHaveLength(2);
 
     for (const project of portfolio.projects) {

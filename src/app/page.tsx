@@ -78,12 +78,19 @@ function CodePathVisual() {
   );
 }
 
-function ProjectArticle({ project }: { project: Project }) {
-  const isAIFocus = project.name === "AIFocus";
+function ProjectVisual({ visual }: { visual: Project["visual"] }) {
+  switch (visual) {
+    case "aifocus":
+      return <AIFocusVisual />;
+    case "codepath":
+      return <CodePathVisual />;
+  }
+}
 
+function ProjectArticle({ project }: { project: Project }) {
   return (
     <article className="project-card">
-      {isAIFocus ? <AIFocusVisual /> : <CodePathVisual />}
+      <ProjectVisual visual={project.visual} />
       <div className="project-copy">
         <p className="section-kicker">{project.role}</p>
         <h3>{project.name}</h3>

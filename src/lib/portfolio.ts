@@ -1,5 +1,6 @@
 export type Project = {
   name: string;
+  visual: "aifocus" | "codepath";
   role: string;
   summary: string;
   evidence: string[];
@@ -25,6 +26,7 @@ export const portfolio = {
   projects: [
     {
       name: "AIFocus",
+      visual: "aifocus",
       role: "AI 信息精选与 Agent 接入平台",
       summary:
         "AIFocus 面向 AI 从业者、内容创作者、研究者和 Agent 用户，把高噪声 AI 信息流处理成可读、可搜、可订阅、可被 Agent 调用的精选服务。",
@@ -38,6 +40,7 @@ export const portfolio = {
     },
     {
       name: "CodePath",
+      visual: "codepath",
       role: "GitHub 源码阅读浏览器扩展",
       summary:
         "CodePath 是面向 GitHub 源码阅读的浏览器扩展，在仓库页面注入侧边栏，帮助用户理解项目结构、技术栈、功能路径、当前文件和后续追问。",
