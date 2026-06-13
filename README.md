@@ -1,0 +1,58 @@
+# personalweb
+
+`personalweb` 是 `lgk-code` 的个人网站项目，绑定仓库：
+
+```text
+https://github.com/lgk-code/personalweb
+```
+
+当前版本是一个 Next.js / TypeScript / Tailwind CSS 个人首页切片，重点展示两个真实项目：
+
+- **AIFocus**：AI 信息精选、日报、RSS、REST API 和 Agent Skill 接入平台。
+- **CodePath**：面向 GitHub 源码阅读的 WXT / React / TypeScript 浏览器扩展。
+
+## 开发
+
+```bash
+npm install
+npm run dev -- --hostname 0.0.0.0 --port 3000
+```
+
+访问：
+
+```text
+http://localhost:3000
+```
+
+## 验证
+
+```bash
+npm test
+npm run lint
+npm run build
+npm run scan:secrets
+npm run quality
+```
+
+当前测试覆盖 `src/lib/portfolio.ts` 的公开身份和项目展示事实，避免 AIFocus / CodePath 描述失真或泄露本机敏感路径。
+`npm run quality` 会串联测试、lint、构建和敏感信息扫描。
+
+## 资产
+
+```bash
+npm run assets:generate
+```
+
+该命令会生成 `public/projects/aifocus-signal.png`，用于 AIFocus 项目展示。CodePath 展示使用相邻项目中已有的公开截图。
+
+站点还包含基于 `next/og` 生成的 `/icon` 和 `/opengraph-image` PNG 路由，用于浏览器标签页和分享预览。
+
+## 素材边界
+
+- 可以读取 `/home/lgk/projects/AIFocus` 和 `/home/lgk/projects/CodePath` 提取展示事实。
+- 默认不得修改相邻项目。
+- 不要把 API key、token、密码、私有配置或本机隐私路径写入页面、文档或提交记录。
+
+## 质量门禁
+
+完整交付前需要补齐真实浏览器桌面/移动截图验证，并按 `AGENTS.md` 要求运行三 Agent 终审：重度 vibe coder、原生审美设计师、破坏性质量官，全部评分大于或等于 90 且无红线。
