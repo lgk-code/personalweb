@@ -32,7 +32,7 @@
 ## 2026-06-14 — Verification
 
 - Minimum local gate is `npm run quality`, which runs tests, lint, build, and sensitive content scanning.
-- Static HTML output checks are part of the local gate because browser screenshot verification can be temporarily unavailable in Codex.
+- Static HTML output checks are part of the local gate because browser screenshot verification can be temporarily unavailable in Codex; they also enforce small HTML size budgets for the homepage and 404 output.
 - Generated asset drift checks run before tests so code and committed PNG outputs stay in sync.
 - Design redline checks prevent regressions such as viewport-scaled font sizes, default scaffold assets, decorative gradients, orb/bokeh motifs, and negative letter spacing.
 - Content redline checks scan source files for filler/template wording so real project copy does not regress into placeholders.

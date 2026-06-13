@@ -58,7 +58,7 @@ npm run quality
 `npm run check:content` 会扫描源码里的 lorem、placeholder、dummy、template 等模板痕迹，避免页面内容退回占位状态。
 `npm run check:contrast` 会静态检查主要文字/背景配色，要求核心文本组合满足 WCAG AA 常规文本对比度。
 `npm run check:asset-privacy` 会扫描公开图片/图标中的可打印元数据，避免本机路径或凭据关键词混入资产。
-`npm run check:html` 会在生产构建后检查首页静态 HTML 的主标题、关键章节、图片 alt、核心资产和敏感/模板痕迹。
+`npm run check:html` 会在生产构建后检查首页静态 HTML 的大小预算、主标题、关键章节、图片 alt、核心资产和敏感/模板痕迹。
 `npm run check:routes` 会在生产构建后检查 App Router manifest，确保主页、404、图标、OG、robots 和 sitemap 都保持静态输出。
 `npm run check:smoke` 会在生产构建后启动 `next start`，检查首页、404、metadata routes、manifest、图片 routes 和实际安全响应头。
 `npm run check:a11y` 会在生产构建后检查主 landmark、跳转链接、导航标签、焦点样式、图片 alt 和 reduced-motion 兜底。

@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 
 const htmlPath = path.join(process.cwd(), ".next", "server", "app", "index.html");
@@ -69,6 +69,10 @@ const requiredAssets = [
 
 const requiredIds = ['id="projects"', 'id="method"', 'id="contact"', 'id="evidence-heading"'];
 const requiredNotFoundText = ["这条路径还没被构建出来。", "返回首页"];
+const htmlBudgets = [
+  [htmlPath, 60_000],
+  [notFoundHtmlPath, 25_000],
+];
 
 function hasAssetReference(asset) {
   return html.includes(asset) || html.includes(encodeURIComponent(asset));
@@ -76,6 +80,14 @@ function hasAssetReference(asset) {
 
 if (h1Count !== 1) {
   fail(`expected exactly one h1, found ${h1Count}`);
+}
+
+for (const [filePath, maxBytes] of htmlBudgets) {
+  const size = statSync(filePath).size;
+
+  if (size > maxBytes) {
+    fail(`${path.relative(process.cwd(), filePath)} is ${size} bytes, expected <= ${maxBytes}`);
+  }
 }
 
 for (const text of requiredText) {
