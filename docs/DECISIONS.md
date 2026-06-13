@@ -53,7 +53,7 @@
 
 ## 2026-06-14 — Dependency Hygiene
 
-- Keep runtime dependencies exact-pinned in `package.json`.
+- Keep runtime dependencies exact-pinned in `package.json`, and enforce that with `npm run check:package`.
 - Use `.npmrc` with `save-exact=true` so future `npm install` commands preserve exact pins.
 - Apply low-risk patch updates only after `npm run quality` passes.
 

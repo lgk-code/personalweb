@@ -46,6 +46,7 @@ npm run check:a11y
 npm run check:links
 npm run check:links:live
 npm run check:docs
+npm run check:package
 npm run check:audit
 npm run scan:secrets
 npm run quality
@@ -64,8 +65,9 @@ npm run quality
 `npm run check:links` 会在生产构建后检查首页和 404 页公开 HTTPS 链接是否在 allowlist 内，并禁止渲染尚未公开的项目仓库链接。当前公开链接包括 GitHub profile、CodePath release 页和 CodePath 扩展包下载链接。
 `npm run check:links:live` 会在生产构建后通过 `curl` 实际访问首页和 404 页公开链接；这是终审前手动检查，不进入默认 `quality`，避免 CI 受网络波动影响。
 `npm run check:docs` 会检查 AGENTS、README、ROADMAP、DECISIONS、终审 rubric 和 CI 配置是否保留项目绑定、三 Agent 门禁、真实浏览器截图要求和关键协作规则。
+`npm run check:package` 会检查运行时依赖精确锁定、React / React DOM 版本一致、`.npmrc` 的 `save-exact=true` 和 Next 内部 PostCSS override。
 `npm run check:audit` 会运行 npm audit，要求 moderate 及以上漏洞为 0。
-`npm run quality` 会串联资产同步、测试、lint、设计红线、内容红线、对比度检查、公开资产隐私扫描、构建、HTML 输出检查、路由输出检查、运行时 smoke 检查、可访问性检查、公开链接检查、项目文档一致性检查、敏感信息扫描和 audit 检查。
+`npm run quality` 会串联资产同步、测试、lint、设计红线、内容红线、对比度检查、公开资产隐私扫描、构建、HTML 输出检查、路由输出检查、运行时 smoke 检查、可访问性检查、公开链接检查、项目文档一致性检查、依赖策略检查、敏感信息扫描和 audit 检查。
 
 GitHub Actions 会在 `main` push 和 pull request 上运行同一套质量门禁。
 
