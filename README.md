@@ -34,14 +34,18 @@ http://localhost:3000
 npm test
 npm run lint
 npm run build
+npm run check:assets
 npm run check:html
 npm run scan:secrets
 npm run quality
 ```
 
 当前测试覆盖公开身份、项目展示事实、站点 URL 解析和关键 PNG 视觉资产，避免 AIFocus / CodePath 描述失真、站点 metadata 跑偏或资产被误替换。
+`npm run check:assets` 会重新生成关键 PNG，并确认仓库里的生成结果没有漂移。
 `npm run check:html` 会在生产构建后检查首页静态 HTML 的主标题、关键章节、图片 alt、核心资产和敏感/模板痕迹。
-`npm run quality` 会串联测试、lint、构建、HTML 输出检查和敏感信息扫描。
+`npm run quality` 会串联资产同步、测试、lint、构建、HTML 输出检查和敏感信息扫描。
+
+GitHub Actions 会在 `main` push 和 pull request 上运行同一套质量门禁。
 
 首页包含 JSON-LD 结构化数据，用于描述 `lgk-code`、AIFocus、CodePath 和当前仓库的公开关系。
 
