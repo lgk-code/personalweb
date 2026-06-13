@@ -44,6 +44,26 @@ a {
   text-decoration: none;
 }
 
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 20;
+  border: 1px solid var(--panel);
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--panel);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.85rem;
+  padding: 0.7rem 0.95rem;
+  transform: translateY(-140%);
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 .hero-section {
   position: relative;
   min-height: 86vh;

@@ -102,6 +102,9 @@ export default function Home() {
   return (
     <main>
       <StructuredData />
+      <a className="skip-link" href="#projects">
+        Skip to projects
+      </a>
       <section className="hero-section">
         <div className="hero-media" aria-hidden="true">
           <Image

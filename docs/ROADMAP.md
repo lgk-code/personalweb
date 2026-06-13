@@ -14,6 +14,7 @@
 - Public site URL resolution is centralized for metadata, `robots.txt`, and `sitemap.xml`.
 - Homepage JSON-LD describes the public profile, showcased projects, and repository relationship.
 - A custom `not-found` page replaces the default unmatched-route experience.
+- A keyboard-visible skip link improves access to the project section.
 - `npm run quality` runs generated asset drift checks, test, lint, build, static HTML output checks, and sensitive content scanning.
 - GitHub Actions runs the same quality gate on `main` pushes and pull requests.
 - Latest local quality gate passed: `npm run quality`.
