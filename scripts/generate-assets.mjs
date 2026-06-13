@@ -2,11 +2,15 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 
-const outputDir = path.join(process.cwd(), "public", "projects");
-const appDir = path.join(process.cwd(), "src", "app");
+const outputRoot = process.env.ASSET_OUTPUT_ROOT
+  ? path.resolve(process.env.ASSET_OUTPUT_ROOT)
+  : process.cwd();
+const sourceAssetDir = path.join(process.cwd(), "public", "projects");
+const outputDir = path.join(outputRoot, "public", "projects");
+const appDir = path.join(outputRoot, "src", "app");
 const aifocusPath = path.join(outputDir, "aifocus-signal.png");
 const aifocusMobilePath = path.join(outputDir, "aifocus-signal-mobile.png");
-const codePathBrowserPath = path.join(outputDir, "codepath-browser.png");
+const codePathBrowserPath = path.join(sourceAssetDir, "codepath-browser.png");
 const codePathPanelPath = path.join(outputDir, "codepath-panel-mobile.png");
 const heroPath = path.join(outputDir, "hero-workbench.png");
 const faviconPath = path.join(appDir, "favicon.ico");
@@ -130,6 +134,7 @@ async function createFaviconFrame(size) {
 }
 
 await mkdir(outputDir, { recursive: true });
+await mkdir(appDir, { recursive: true });
 await sharp(Buffer.from(svg)).png().toFile(aifocusPath);
 await sharp(Buffer.from(mobileSvg)).png().toFile(aifocusMobilePath);
 await sharp(codePathBrowserPath)
