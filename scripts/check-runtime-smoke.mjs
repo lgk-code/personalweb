@@ -182,13 +182,20 @@ try {
     "text/plain"
   );
   await assertTextRoute(baseUrl, "/sitemap.xml", 200, ["<urlset", "<loc>", "</loc>"], "application/xml");
+  await assertTextRoute(
+    baseUrl,
+    "/manifest.webmanifest",
+    200,
+    ["lgk-code", "AIFocus", "/apple-icon"],
+    "application/manifest+json"
+  );
   await assertTextRoute(baseUrl, "/missing-runtime-smoke", 404, ["这条路径还没被构建出来。"], "text/html");
   await assertBinaryRoute(baseUrl, "/apple-icon", "image/png", 1_000);
   await assertBinaryRoute(baseUrl, "/favicon.ico", "image/x-icon", 1_000);
   await assertBinaryRoute(baseUrl, "/icon", "image/png", 500);
   await assertBinaryRoute(baseUrl, "/opengraph-image", "image/png", 10_000);
 
-  console.log("Runtime smoke check passed (homepage, 404, metadata routes, icon routes, headers)");
+  console.log("Runtime smoke check passed (homepage, 404, metadata routes, manifest, icon routes, headers)");
 } catch (error) {
   console.error(error instanceof Error ? error.message : String(error));
   process.exitCode = 1;

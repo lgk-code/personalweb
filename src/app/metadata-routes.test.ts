@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import manifest from "./manifest";
 import robots from "./robots";
 import sitemap from "./sitemap";
 
@@ -47,5 +48,35 @@ describe("metadata routes", () => {
     expect(home.url).toBe("http://localhost:3000/");
     expect(home.changeFrequency).toBe("monthly");
     expect(home.priority).toBe(1);
+  });
+
+  it("generates a compact web app manifest from site metadata", () => {
+    expect(manifest()).toEqual({
+      name: "lgk-code",
+      short_name: "lgk-code",
+      description: "lgk-code 的个人网站，展示 AIFocus、CodePath 和 AI 产品工程实践。",
+      start_url: "/",
+      display: "standalone",
+      background_color: "#f4f6f1",
+      theme_color: "#151713",
+      icons: [
+        {
+          src: "/favicon.ico",
+          sizes: "any",
+          type: "image/x-icon",
+        },
+        {
+          src: "/icon",
+          sizes: "64x64",
+          type: "image/png",
+        },
+        {
+          src: "/apple-icon",
+          sizes: "180x180",
+          type: "image/png",
+          purpose: "any",
+        },
+      ],
+    });
   });
 });

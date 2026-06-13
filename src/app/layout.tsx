@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  manifest: "/manifest.webmanifest",
   authors: [
     {
       name: site.handle,

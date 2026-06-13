@@ -38,8 +38,8 @@
 - Content redline checks scan source files for filler/template wording so real project copy does not regress into placeholders.
 - Contrast checks statically enforce the main text/background color pairs at WCAG AA regular-text contrast.
 - Public asset privacy scans inspect printable metadata in image and icon files for local paths or credential markers.
-- Route output checks read the production build manifests to keep the homepage, 404, image routes, `robots.txt`, and `sitemap.xml` static.
-- Runtime smoke checks start `next start` on an ephemeral local port and verify key routes plus actual security response headers.
+- Route output checks read the production build manifests to keep the homepage, 404, image routes, `manifest.webmanifest`, `robots.txt`, and `sitemap.xml` static.
+- Runtime smoke checks start `next start` on an ephemeral local port and verify key routes, `manifest.webmanifest`, and actual security response headers.
 - Static accessibility output checks cover landmarks, skip targets, labelled navigation, focus outlines, reduced motion, image alt text, and link safety.
 - Public link checks use a static allowlist for rendered homepage HTTPS links and prevent not-yet-public repository links from appearing.
 - Live public link checks are available as an opt-in final-review command, but stay out of `npm run quality` to avoid network flakes in CI.

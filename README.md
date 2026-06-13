@@ -59,7 +59,7 @@ npm run quality
 `npm run check:asset-privacy` 会扫描公开图片/图标中的可打印元数据，避免本机路径或凭据关键词混入资产。
 `npm run check:html` 会在生产构建后检查首页静态 HTML 的主标题、关键章节、图片 alt、核心资产和敏感/模板痕迹。
 `npm run check:routes` 会在生产构建后检查 App Router manifest，确保主页、404、图标、OG、robots 和 sitemap 都保持静态输出。
-`npm run check:smoke` 会在生产构建后启动 `next start`，检查首页、404、metadata routes、图片 routes 和实际安全响应头。
+`npm run check:smoke` 会在生产构建后启动 `next start`，检查首页、404、metadata routes、manifest、图片 routes 和实际安全响应头。
 `npm run check:a11y` 会在生产构建后检查主 landmark、跳转链接、导航标签、焦点样式、图片 alt 和 reduced-motion 兜底。
 `npm run check:links` 会在生产构建后检查首页公开 HTTPS 链接是否在 allowlist 内，并禁止渲染尚未公开的项目仓库链接。
 `npm run check:links:live` 会在生产构建后实际访问首页公开链接；这是终审前手动检查，不进入默认 `quality`，避免 CI 受网络波动影响。
@@ -87,7 +87,7 @@ npm run assets:generate
 
 CodePath 项目展示使用相邻项目中已有的公开截图，并将含本机路径的 MCP 原图裁剪为只保留公开对比表的 `public/projects/codepath-mcp-comparison.png`。
 
-站点还包含基于 `next/og` 生成的 `/icon`、`/apple-icon` 和 `/opengraph-image` PNG 路由，用于浏览器标签页、移动主屏图标和分享预览。
+站点还包含基于 `next/og` 生成的 `/icon`、`/apple-icon` 和 `/opengraph-image` PNG 路由，以及 `/manifest.webmanifest` 站点 manifest，用于浏览器标签页、移动主屏图标和分享预览。
 
 ## 素材边界
 
