@@ -26,7 +26,7 @@ http://localhost:3000
 
 ## 部署 URL
 
-生产环境优先通过 `NEXT_PUBLIC_SITE_URL` 指定公开站点地址；未设置时会依次使用 Vercel 自动注入的生产/预览地址，本地开发回退到 `http://localhost:3000`。`/robots.txt`、`/sitemap.xml` 和分享图 metadata 都使用同一套解析逻辑。
+生产环境优先通过 `NEXT_PUBLIC_SITE_URL` 指定公开站点地址；未设置时会依次使用 Vercel 自动注入的生产/预览地址，本地开发优先回退到 `http://localhost:$PORT`，未设置 `PORT` 时使用 `http://localhost:3000`。`/robots.txt`、`/sitemap.xml` 和分享图 metadata 都使用同一套解析逻辑。
 
 ## 验证
 

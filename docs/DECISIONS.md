@@ -45,4 +45,5 @@
 ## 2026-06-14 — Security Headers
 
 - Add low-risk response headers in `next.config.ts`: `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options`, and `Permissions-Policy`.
+- Disable `X-Powered-By` so the app does not advertise the framework in runtime headers.
 - Do not add a Content Security Policy yet; it needs a separate pass because Next.js inline scripts, JSON-LD, and image optimization can be easy to break.
