@@ -35,6 +35,7 @@
 - Runtime smoke checks start `next start` on an ephemeral local port and verify key routes plus actual security response headers.
 - Static accessibility output checks cover landmarks, skip targets, labelled navigation, focus outlines, reduced motion, image alt text, and link safety.
 - Public link checks use a static allowlist for rendered homepage HTTPS links and prevent not-yet-public repository links from appearing.
+- Live public link checks are available as an opt-in final-review command, but stay out of `npm run quality` to avoid network flakes in CI.
 - Audit checks require zero moderate-or-higher advisories.
 - Pin `next` to `16.2.9` and use an npm override for its internal `postcss` dependency until Next ships the patched PostCSS version upstream.
 - Mirror the same gate in GitHub Actions for `main` pushes and pull requests.

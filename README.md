@@ -43,6 +43,7 @@ npm run check:routes
 npm run check:smoke
 npm run check:a11y
 npm run check:links
+npm run check:links:live
 npm run check:audit
 npm run scan:secrets
 npm run quality
@@ -58,6 +59,7 @@ npm run quality
 `npm run check:smoke` 会在生产构建后启动 `next start`，检查首页、404、metadata routes、图片 routes 和实际安全响应头。
 `npm run check:a11y` 会在生产构建后检查主 landmark、跳转链接、导航标签、焦点样式、图片 alt 和 reduced-motion 兜底。
 `npm run check:links` 会在生产构建后检查首页公开 HTTPS 链接是否在 allowlist 内，并禁止渲染尚未公开的项目仓库链接。
+`npm run check:links:live` 会在生产构建后实际访问首页公开链接；这是终审前手动检查，不进入默认 `quality`，避免 CI 受网络波动影响。
 `npm run check:audit` 会运行 npm audit，要求 moderate 及以上漏洞为 0。
 `npm run quality` 会串联资产同步、测试、lint、设计红线、对比度检查、公开资产隐私扫描、构建、HTML 输出检查、路由输出检查、运行时 smoke 检查、可访问性检查、公开链接检查、敏感信息扫描和 audit 检查。
 

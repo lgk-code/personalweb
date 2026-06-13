@@ -19,6 +19,7 @@
 - Homepage metadata includes canonical, author, creator, publisher, Open Graph, Twitter, and JSON-LD signals.
 - Homepage JSON-LD describes the public profile and showcased projects.
 - Public page links avoid private or not-yet-public GitHub repositories.
+- Live public link checks are available with `npm run check:links:live` for final review passes.
 - A custom `not-found` page replaces the default unmatched-route experience.
 - A keyboard-visible skip link improves access to the project section.
 - Static accessibility checks cover landmarks, hash-link targets, focus outlines, reduced motion, labelled nav, and project image alt text.
