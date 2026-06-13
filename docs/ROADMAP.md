@@ -6,6 +6,7 @@
 - Git is initialized on `main` and `origin` points to `https://github.com/lgk-code/personalweb.git`.
 - The home page now has a first usable slice: project-backed hero, project showcase, evidence chain, working style, and contact links.
 - `AIFocus` and `CodePath` content is stored in `src/lib/portfolio.ts` and covered by `src/lib/portfolio.test.ts`.
+- Project cards include short field notes so each showcased system carries a little more working-context signal than a generic portfolio card.
 - Key PNG visuals are covered by asset metadata tests.
 - A CodePath public screenshot was copied into `public/projects/` for visual project evidence.
 - A CodePath MCP comparison crop is included as a second public-safe screenshot, with the original local path area excluded.
@@ -37,6 +38,8 @@
 ## Midreview Notes
 
 2026-06-14 static-only subagent midreview scores were 88 (vibe coder), 86 (native design), and 82 (destructive quality). Follow-up fixes removed competing hero asset text, localized the skip link, made project proof points name AIFocus/CodePath directly, added mobile-specific project visuals, strengthened secret/audit checks, disabled `X-Powered-By`, and made local site URLs respect `PORT`. These reviews do not count as final acceptance because real browser desktop/mobile screenshots are still missing.
+
+Later on 2026-06-14, a second static-only subagent midreview scored 93 (vibe coder), 91 (native design), and 92 (destructive quality), with no static redlines. Follow-up fixes replaced the project-management flavored hero proof point, added project field notes, added runtime smoke coverage, and made generated asset checks run against a temporary output root. These scores still do not count as final acceptance because real browser desktop/mobile screenshots are still missing.
 
 ## Known Verification Gap
 
