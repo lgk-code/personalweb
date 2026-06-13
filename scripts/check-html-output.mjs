@@ -22,6 +22,7 @@ const notFoundHtml = readFileSync(notFoundHtmlPath, "utf8");
 const combinedHtml = `${html}\n${notFoundHtml}`;
 const imageTags = html.match(/<img\b[^>]*>/g) ?? [];
 const imagePreloads = html.match(/<link\b(?=[^>]*rel="preload")(?=[^>]*as="image")[^>]*>/g) ?? [];
+const jsonLdMatch = html.match(/<script type="application\/ld\+json">(.*?)<\/script>/);
 const h1Count = (html.match(/<h1\b/g) ?? []).length;
 
 const requiredText = [
@@ -103,6 +104,44 @@ if (imagePreloads.length !== 1) {
 
 if (!imagePreloads[0].includes("hero-workbench.png")) {
   fail("the only priority image preload must be the hero workbench asset");
+}
+
+if (!jsonLdMatch) {
+  fail("missing JSON-LD script");
+}
+
+let jsonLd;
+try {
+  jsonLd = JSON.parse(jsonLdMatch[1]);
+} catch (error) {
+  fail(`invalid JSON-LD: ${error instanceof Error ? error.message : String(error)}`);
+}
+
+if (jsonLd["@type"] !== "Person" || jsonLd.name !== "lgk-code") {
+  fail("JSON-LD must describe the public lgk-code person identity");
+}
+
+if (!Array.isArray(jsonLd.workExample) || jsonLd.workExample.length !== 2) {
+  fail("JSON-LD must describe exactly two showcased work examples");
+}
+
+const aifocusWork = jsonLd.workExample.find((work) => work.name === "AIFocus");
+const codePathWork = jsonLd.workExample.find((work) => work.name === "CodePath");
+
+if (!aifocusWork || !codePathWork) {
+  fail("JSON-LD work examples must include AIFocus and CodePath");
+}
+
+if ("url" in aifocusWork) {
+  fail("AIFocus JSON-LD must not publish a private or unavailable URL");
+}
+
+if (codePathWork.url !== "https://github.com/lgk-code/codepath-extension/releases/latest") {
+  fail("CodePath JSON-LD must point to the public release URL");
+}
+
+if (JSON.stringify(jsonLd).includes("undefined")) {
+  fail("JSON-LD must not include undefined values");
 }
 
 for (const tag of imageTags) {
