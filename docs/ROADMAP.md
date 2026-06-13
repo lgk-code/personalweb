@@ -22,7 +22,7 @@
 - A keyboard-visible skip link improves access to the project section.
 - Static accessibility checks cover landmarks, hash-link targets, focus outlines, reduced motion, labelled nav, and project image alt text.
 - Basic security headers are configured in `next.config.ts`.
-- `npm run quality` runs generated asset drift checks, test, lint, design redline checks, contrast checks, public asset privacy scans, build, static HTML output checks, accessibility checks, public link allowlist checks, sensitive content scanning, and audit checks.
+- `npm run quality` runs generated asset drift checks, test, lint, design redline checks, contrast checks, public asset privacy scans, build, static HTML output checks, route output checks, accessibility checks, public link allowlist checks, sensitive content scanning, and audit checks.
 - GitHub Actions runs the same quality gate on `main` pushes and pull requests.
 - Dependabot is configured for npm and GitHub Actions updates.
 - `docs/REVIEW-RUBRIC.md` defines the three-agent final review scoring rules.

@@ -39,6 +39,7 @@ npm run check:design
 npm run check:contrast
 npm run check:asset-privacy
 npm run check:html
+npm run check:routes
 npm run check:a11y
 npm run check:links
 npm run check:audit
@@ -52,10 +53,11 @@ npm run quality
 `npm run check:contrast` 会静态检查主要文字/背景配色，要求核心文本组合满足 WCAG AA 常规文本对比度。
 `npm run check:asset-privacy` 会扫描公开图片/图标中的可打印元数据，避免本机路径或凭据关键词混入资产。
 `npm run check:html` 会在生产构建后检查首页静态 HTML 的主标题、关键章节、图片 alt、核心资产和敏感/模板痕迹。
+`npm run check:routes` 会在生产构建后检查 App Router manifest，确保主页、404、图标、OG、robots 和 sitemap 都保持静态输出。
 `npm run check:a11y` 会在生产构建后检查主 landmark、跳转链接、导航标签、焦点样式、图片 alt 和 reduced-motion 兜底。
 `npm run check:links` 会在生产构建后检查首页公开 HTTPS 链接是否在 allowlist 内，并禁止渲染尚未公开的项目仓库链接。
 `npm run check:audit` 会运行 npm audit，要求 moderate 及以上漏洞为 0。
-`npm run quality` 会串联资产同步、测试、lint、设计红线、对比度检查、公开资产隐私扫描、构建、HTML 输出检查、可访问性检查、公开链接检查、敏感信息扫描和 audit 检查。
+`npm run quality` 会串联资产同步、测试、lint、设计红线、对比度检查、公开资产隐私扫描、构建、HTML 输出检查、路由输出检查、可访问性检查、公开链接检查、敏感信息扫描和 audit 检查。
 
 GitHub Actions 会在 `main` push 和 pull request 上运行同一套质量门禁。
 
