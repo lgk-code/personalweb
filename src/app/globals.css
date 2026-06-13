@@ -262,6 +262,16 @@ a:focus-visible {
   background: #18202a;
 }
 
+.codepath-visual {
+  align-items: center;
+}
+
+.codepath-visual-stack {
+  display: grid;
+  width: min(100%, 540px);
+  gap: 0.85rem;
+}
+
 .asset-visual img {
   width: 100%;
   height: auto;
@@ -269,6 +279,18 @@ a:focus-visible {
   border: 1px solid rgba(24, 23, 19, 0.22);
   border-radius: 6px;
   object-fit: contain;
+}
+
+.codepath-visual-stack .primary-shot {
+  max-height: 310px;
+  background: #101823;
+}
+
+.codepath-visual-stack .secondary-shot {
+  width: 88%;
+  max-height: 180px;
+  justify-self: end;
+  background: #fff;
 }
 
 .project-copy {

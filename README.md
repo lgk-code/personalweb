@@ -65,7 +65,7 @@ npm run assets:generate
 - `public/projects/hero-workbench.png`：由 AIFocus 视觉和 CodePath 截图合成的首屏背景图。
 - `src/app/favicon.ico`：自有 `lgk` favicon，避免保留脚手架默认图标。
 
-CodePath 项目展示使用相邻项目中已有的公开截图。
+CodePath 项目展示使用相邻项目中已有的公开截图，并将含本机路径的 MCP 原图裁剪为只保留公开对比表的 `public/projects/codepath-mcp-comparison.png`。
 
 站点还包含基于 `next/og` 生成的 `/icon` 和 `/opengraph-image` PNG 路由，用于浏览器标签页和分享预览。
 

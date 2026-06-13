@@ -41,6 +41,7 @@ const requiredAssets = [
   "/projects/hero-workbench.png",
   "/projects/aifocus-signal.png",
   "/projects/codepath-browser.png",
+  "/projects/codepath-mcp-comparison.png",
 ];
 
 const requiredIds = ['id="projects"', 'id="method"', 'id="contact"', 'id="evidence-heading"'];
@@ -78,8 +79,8 @@ for (const text of requiredNotFoundText) {
   }
 }
 
-if (imageTags.length < 3) {
-  fail(`expected at least three rendered images, found ${imageTags.length}`);
+if (imageTags.length < 4) {
+  fail(`expected at least four rendered images, found ${imageTags.length}`);
 }
 
 if (imagePreloads.length !== 1) {
@@ -102,6 +103,10 @@ if (!imageTags.some((tag) => tag.includes('alt="AIFocus'))) {
 
 if (!imageTags.some((tag) => tag.includes('alt="CodePath'))) {
   fail("missing non-decorative CodePath image alt text");
+}
+
+if (!imageTags.some((tag) => tag.includes("CodePath MCP"))) {
+  fail("missing non-decorative CodePath MCP image alt text");
 }
 
 if (

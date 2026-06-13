@@ -49,14 +49,25 @@ function AIFocusVisual() {
 
 function CodePathVisual() {
   return (
-    <div className="project-visual asset-visual screenshot-visual">
-      <Image
-        src="/projects/codepath-browser.png"
-        alt="CodePath 在 GitHub 页面侧边栏中分析源码的截图"
-        width={1434}
-        height={1308}
-        sizes="(min-width: 1024px) 42vw, 92vw"
-      />
+    <div className="project-visual asset-visual screenshot-visual codepath-visual">
+      <div className="codepath-visual-stack">
+        <Image
+          className="primary-shot"
+          src="/projects/codepath-browser.png"
+          alt="CodePath 在 GitHub 页面侧边栏中分析源码的截图"
+          width={1434}
+          height={1308}
+          sizes="(min-width: 1024px) 38vw, 92vw"
+        />
+        <Image
+          className="secondary-shot"
+          src="/projects/codepath-mcp-comparison.png"
+          alt="CodePath MCP 与 GitHub API 分析深度对比表截图"
+          width={790}
+          height={420}
+          sizes="(min-width: 1024px) 30vw, 82vw"
+        />
+      </div>
     </div>
   );
 }

@@ -19,6 +19,11 @@ const visualAssets = [
     minWidth: 1200,
     minHeight: 1000,
   },
+  {
+    file: "codepath-mcp-comparison.png",
+    minWidth: 760,
+    minHeight: 400,
+  },
 ];
 
 describe("public visual assets", () => {

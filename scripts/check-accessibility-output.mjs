@@ -75,8 +75,8 @@ if (!/prefers-reduced-motion:\s*reduce/.test(css)) {
   fail("CSS must respect reduced motion preferences");
 }
 
-if (imageTags.length < 3) {
-  fail(`expected at least three images, found ${imageTags.length}`);
+if (imageTags.length < 4) {
+  fail(`expected at least four images, found ${imageTags.length}`);
 }
 
 const emptyAltImages = imageTags.filter((tag) => getAttribute(tag, "alt") === "");
@@ -93,7 +93,7 @@ if (!html.includes('<div class="hero-media" aria-hidden="true"><img alt=""')) {
   fail("the decorative empty-alt image must stay inside the aria-hidden hero media");
 }
 
-if (describedImages.length < 2) {
+if (describedImages.length < 3) {
   fail("project images must keep descriptive alt text");
 }
 
