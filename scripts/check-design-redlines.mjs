@@ -1,8 +1,8 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 
-const roots = ["src", "public"];
-const textExtensions = new Set([".css", ".tsx", ".ts", ".md"]);
+const roots = ["src", "public", "scripts"];
+const textExtensions = new Set([".css", ".tsx", ".ts", ".md", ".mjs"]);
 const redlines = [
   {
     name: "font-size must not scale with viewport width",
@@ -45,9 +45,14 @@ function listFiles(directory) {
 }
 
 const files = roots.flatMap((root) => listFiles(path.join(process.cwd(), root)));
+const ignoredFiles = new Set(["scripts/check-design-redlines.mjs"]);
 const violations = [];
 
 for (const file of files) {
+  if (ignoredFiles.has(path.relative(process.cwd(), file))) {
+    continue;
+  }
+
   const content = readFileSync(file, "utf8");
 
   for (const redline of redlines) {

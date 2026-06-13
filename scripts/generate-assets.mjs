@@ -119,13 +119,10 @@ const heroSvg = `
   <rect x="104" y="120" width="532" height="1" fill="#edf0e6" opacity="0.42" />
   <rect x="104" y="236" width="408" height="1" fill="#edf0e6" opacity="0.28" />
   <rect x="104" y="352" width="590" height="1" fill="#edf0e6" opacity="0.18" />
-  <rect x="104" y="876" width="380" height="48" rx="6" fill="#b3261e" />
-  <rect x="104" y="948" width="250" height="48" rx="6" fill="#286a4b" />
-  <rect x="390" y="948" width="190" height="48" rx="6" fill="#285f8f" />
-  <text x="104" y="824" fill="#edf0e6" font-size="22" font-family="Geist Mono, ui-monospace, monospace">AIFocus / CodePath / personalweb</text>
-  <text x="104" y="910" fill="#fffdf8" font-size="22" font-family="Geist Mono, ui-monospace, monospace">signal before spectacle</text>
-  <text x="104" y="982" fill="#fffdf8" font-size="22" font-family="Geist Mono, ui-monospace, monospace">agent-ready</text>
-  <text x="390" y="982" fill="#fffdf8" font-size="22" font-family="Geist Mono, ui-monospace, monospace">reviewed</text>
+  <rect x="104" y="794" width="420" height="1" fill="#edf0e6" opacity="0.16" />
+  <rect x="104" y="876" width="300" height="1" fill="#edf0e6" opacity="0.22" />
+  <rect x="104" y="948" width="520" height="1" fill="#edf0e6" opacity="0.14" />
+  <rect x="104" y="1016" width="230" height="1" fill="#edf0e6" opacity="0.26" />
   <rect x="910" y="118" width="804" height="520" rx="14" fill="#fffdf8" stroke="#151713" stroke-width="3" />
   <rect x="1120" y="504" width="690" height="500" rx="14" fill="#18202a" stroke="#151713" stroke-width="3" />
   <rect x="1542" y="96" width="170" height="34" rx="4" fill="#b3261e" />

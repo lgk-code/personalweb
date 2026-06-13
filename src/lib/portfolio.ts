@@ -18,9 +18,9 @@ export const portfolio = {
       "我把信息筛选、代码阅读和 agent 工作流做成可运行的产品：先保护注意力，再放大判断力。",
   },
   heroProofPoints: [
-    "把 AI 信息过载压缩成精选、日报、RSS、API 和 Skill",
-    "把 GitHub 仓库阅读变成侧边栏里的项目理解路径",
-    "习惯用真实构建、真实截图和多角色评审收尾",
+    "AIFocus 把 AI 信息过载压缩成精选、日报、RSS、API 和 Skill",
+    "CodePath 把 GitHub 仓库阅读变成侧边栏里的项目理解路径",
+    "personalweb 用真实构建、公开截图和多角色评审收尾",
   ],
   projects: [
     {
@@ -60,6 +60,7 @@ export const portfolio = {
     "用工程化验证把 vibe 变成可复现质量",
     "让 agent、工具和人各做自己最擅长的部分",
   ],
+  contactHeading: "看公开代码与 release；如果方向对味，就从一个具体系统聊起。",
   evidenceChains: [
     {
       label: "AIFocus",

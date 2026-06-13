@@ -29,7 +29,7 @@ const requiredText = [
   "AIFocus",
   "CodePath",
   "Evidence chain",
-  "Skip to projects",
+  "跳到项目",
   "application/ld+json",
   "https://schema.org",
   "github.com/lgk-code/codepath-extension/releases/latest",

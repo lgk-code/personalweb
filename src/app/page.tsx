@@ -110,7 +110,7 @@ export default function Home() {
     <main>
       <StructuredData />
       <a className="skip-link" href="#projects">
-        Skip to projects
+        跳到项目
       </a>
       <section className="hero-section">
         <div className="hero-media" aria-hidden="true">
@@ -193,7 +193,7 @@ export default function Home() {
       <section className="contact-section" id="contact">
         <div className="section-shell contact-layout">
           <p className="section-kicker">Next build</p>
-          <h2>接下来会把这个站点继续打磨到能经受截图、代码和多角色评审。</h2>
+          <h2>{portfolio.contactHeading}</h2>
           <div className="contact-actions">
             <a href={site.profileUrl}>GitHub</a>
             {codePathReleaseLink ? (

@@ -36,7 +36,7 @@ const requiredFragments = [
   ['<html lang="zh-CN"', "document language must be set"],
   ["<main>", "page must expose a main landmark"],
   ['<nav class="top-nav" aria-label="主导航"', "top nav must have an accessible label"],
-  ['<a class="skip-link" href="#projects">Skip to projects</a>', "skip link must target projects"],
+  ['<a class="skip-link" href="#projects">跳到项目</a>', "skip link must target projects"],
   ['id="projects"', "projects skip target must exist"],
   ['id="method"', "method section target must exist"],
   ['id="contact"', "contact section target must exist"],
