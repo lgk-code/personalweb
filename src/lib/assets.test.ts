@@ -23,6 +23,8 @@ const visualAssets = [
     file: "codepath-mcp-comparison.png",
     minWidth: 760,
     minHeight: 400,
+    maxWidth: 900,
+    maxHeight: 500,
   },
 ];
 
@@ -35,6 +37,15 @@ describe("public visual assets", () => {
     expect(metadata.format).toBe("png");
     expect(metadata.width).toBeGreaterThanOrEqual(asset.minWidth);
     expect(metadata.height).toBeGreaterThanOrEqual(asset.minHeight);
+
+    if (asset.maxWidth !== undefined) {
+      expect(metadata.width).toBeLessThanOrEqual(asset.maxWidth);
+    }
+
+    if (asset.maxHeight !== undefined) {
+      expect(metadata.height).toBeLessThanOrEqual(asset.maxHeight);
+    }
+
     expect(stats.isOpaque).toBe(true);
   });
 
