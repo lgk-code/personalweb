@@ -17,7 +17,7 @@
 - A generated `/manifest.webmanifest` route connects the site identity to the existing favicon, icon, and Apple icon assets.
 - Public site URL resolution is centralized for metadata, `robots.txt`, and `sitemap.xml`.
 - Metadata routes are covered by unit tests.
-- Homepage metadata includes canonical, author, creator, publisher, Open Graph, Twitter, and JSON-LD signals.
+- Homepage metadata includes canonical, author, creator, publisher, Open Graph, Twitter, theme-color, color-scheme, and JSON-LD signals.
 - Homepage JSON-LD describes the public profile and showcased projects.
 - Public page links avoid private or not-yet-public GitHub repositories, while exposing the GitHub profile, the CodePath release page, and the CodePath extension download.
 - Live public link checks are available with `npm run check:links:live` for final review passes; redirected signed query strings are stripped from command output.

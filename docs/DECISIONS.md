@@ -64,6 +64,7 @@
 - Normalize configured deployment URLs to their origin by removing path, query, and hash segments.
 - Use the resolved site URL for metadata, `robots.txt`, and `sitemap.xml`.
 - Local development falls back to `http://localhost:$PORT` when `PORT` is set, otherwise `http://localhost:3000`.
+- Keep viewport metadata static: `themeColor` matches the dark hero surface and `colorScheme` remains light for default browser UI.
 
 ## 2026-06-14 — Security Headers
 

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { site } from "@/lib/site";
 import { getSiteUrl } from "@/lib/site-url";
@@ -43,6 +43,11 @@ export const metadata: Metadata = {
     description: site.shareDescription,
     images: ["/opengraph-image"],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#151713",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
