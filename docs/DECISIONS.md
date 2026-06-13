@@ -29,6 +29,7 @@
 - Static HTML output checks are part of the local gate because browser screenshot verification can be temporarily unavailable in Codex.
 - Generated asset drift checks run before tests so code and committed PNG outputs stay in sync.
 - Design redline checks prevent regressions such as viewport-scaled font sizes, default scaffold assets, decorative gradients, orb/bokeh motifs, and negative letter spacing.
+- Static accessibility output checks cover landmarks, skip targets, labelled navigation, focus outlines, reduced motion, image alt text, and link safety.
 - Mirror the same gate in GitHub Actions for `main` pushes and pull requests.
 - Use Dependabot PRs for npm and GitHub Actions updates instead of ad hoc dependency drift.
 - Full delivery also requires browser screenshot verification and the three-role subagent review gate described in `AGENTS.md`.

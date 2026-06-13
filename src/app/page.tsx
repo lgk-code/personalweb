@@ -42,7 +42,6 @@ function AIFocusVisual() {
         width={1280}
         height={760}
         sizes="(min-width: 1024px) 42vw, 92vw"
-        priority
       />
     </div>
   );
@@ -57,7 +56,6 @@ function CodePathVisual() {
         width={1434}
         height={1308}
         sizes="(min-width: 1024px) 42vw, 92vw"
-        priority
       />
     </div>
   );

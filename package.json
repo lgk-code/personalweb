@@ -12,8 +12,9 @@
     "check:assets": "node scripts/check-generated-assets.mjs",
     "check:design": "node scripts/check-design-redlines.mjs",
     "check:html": "node scripts/check-html-output.mjs",
+    "check:a11y": "node scripts/check-accessibility-output.mjs",
     "scan:secrets": "node scripts/scan-secrets.mjs",
-    "quality": "npm run check:assets && npm test && npm run lint && npm run check:design && npm run build && npm run check:html && npm run scan:secrets"
+    "quality": "npm run check:assets && npm test && npm run lint && npm run check:design && npm run build && npm run check:html && npm run check:a11y && npm run scan:secrets"
   },
   "dependencies": {
     "next": "16.2.9",

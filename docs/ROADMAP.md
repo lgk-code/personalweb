@@ -18,8 +18,9 @@
 - Public page links avoid private or not-yet-public GitHub repositories.
 - A custom `not-found` page replaces the default unmatched-route experience.
 - A keyboard-visible skip link improves access to the project section.
+- Static accessibility checks cover landmarks, hash-link targets, focus outlines, reduced motion, labelled nav, and project image alt text.
 - Basic security headers are configured in `next.config.ts`.
-- `npm run quality` runs generated asset drift checks, test, lint, design redline checks, build, static HTML output checks, and sensitive content scanning.
+- `npm run quality` runs generated asset drift checks, test, lint, design redline checks, build, static HTML output checks, accessibility checks, and sensitive content scanning.
 - GitHub Actions runs the same quality gate on `main` pushes and pull requests.
 - Dependabot is configured for npm and GitHub Actions updates.
 - `docs/REVIEW-RUBRIC.md` defines the three-agent final review scoring rules.

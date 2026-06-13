@@ -21,6 +21,7 @@ const html = readFileSync(htmlPath, "utf8");
 const notFoundHtml = readFileSync(notFoundHtmlPath, "utf8");
 const combinedHtml = `${html}\n${notFoundHtml}`;
 const imageTags = html.match(/<img\b[^>]*>/g) ?? [];
+const imagePreloads = html.match(/<link\b(?=[^>]*rel="preload")(?=[^>]*as="image")[^>]*>/g) ?? [];
 const h1Count = (html.match(/<h1\b/g) ?? []).length;
 
 const requiredText = [
@@ -79,6 +80,14 @@ for (const text of requiredNotFoundText) {
 
 if (imageTags.length < 3) {
   fail(`expected at least three rendered images, found ${imageTags.length}`);
+}
+
+if (imagePreloads.length !== 1) {
+  fail(`expected exactly one priority image preload, found ${imagePreloads.length}`);
+}
+
+if (!imagePreloads[0].includes("hero-workbench.png")) {
+  fail("the only priority image preload must be the hero workbench asset");
 }
 
 for (const tag of imageTags) {
