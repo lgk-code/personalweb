@@ -34,6 +34,12 @@ describe("getSiteUrl", () => {
     expect(getSiteUrl().toString()).toBe("https://lgk-code.dev/");
   });
 
+  it("normalizes deploy URLs to the site origin", () => {
+    process.env.NEXT_PUBLIC_SITE_URL = "https://lgk-code.dev/some/path?preview=1#section";
+
+    expect(getSiteUrl().toString()).toBe("https://lgk-code.dev/");
+  });
+
   it("falls back through Vercel URLs before local development", () => {
     process.env.VERCEL_URL = "preview.example.com";
 

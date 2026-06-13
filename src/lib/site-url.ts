@@ -26,7 +26,11 @@ function normalizeSiteUrl(value: string | undefined) {
   const withProtocol = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
 
   try {
-    return new URL(withProtocol);
+    const url = new URL(withProtocol);
+    url.pathname = "/";
+    url.search = "";
+    url.hash = "";
+    return url;
   } catch {
     return null;
   }
