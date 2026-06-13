@@ -29,6 +29,7 @@
 - Static HTML output checks are part of the local gate because browser screenshot verification can be temporarily unavailable in Codex.
 - Generated asset drift checks run before tests so code and committed PNG outputs stay in sync.
 - Design redline checks prevent regressions such as viewport-scaled font sizes, default scaffold assets, decorative gradients, orb/bokeh motifs, and negative letter spacing.
+- Contrast checks statically enforce the main text/background color pairs at WCAG AA regular-text contrast.
 - Static accessibility output checks cover landmarks, skip targets, labelled navigation, focus outlines, reduced motion, image alt text, and link safety.
 - Public link checks use a static allowlist for rendered homepage HTTPS links and prevent not-yet-public repository links from appearing.
 - Audit checks require zero moderate-or-higher advisories.
