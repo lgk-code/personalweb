@@ -31,6 +31,10 @@ const redlines = [
     label: "scaffold copy",
     pattern: /\bscaffold\b/i,
   },
+  {
+    label: "Chinese placeholder copy",
+    pattern: /占位|假数据|模板|示例项目/,
+  },
 ];
 
 const violations = [];
