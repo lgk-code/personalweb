@@ -618,17 +618,36 @@ a:focus-visible {
 }
 
 @media (max-width: 520px) {
+  .top-nav {
+    padding: 0.75rem 1rem;
+  }
+
+  .top-nav a {
+    padding: 0.55rem 0.72rem;
+  }
+
   .hero-content h1 {
     font-size: 3.8rem;
+  }
+
+  .hero-summary {
+    line-height: 1.45;
   }
 
   .not-found-content h1 {
     font-size: 3.2rem;
   }
 
+  .proof-row {
+    gap: 0.5rem;
+    margin-top: 1.35rem;
+  }
+
   .proof-row span,
   .stack-list span {
     font-size: 0.82rem;
+    line-height: 1.35;
+    padding: 0.48rem 0.62rem;
   }
 }
 
