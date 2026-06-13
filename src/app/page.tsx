@@ -97,6 +97,7 @@ function ProjectArticle({ project }: { project: Project }) {
         <p className="section-kicker">{project.role}</p>
         <h3 id={titleId}>{project.name}</h3>
         <p>{project.summary}</p>
+        <p className="field-note">{project.fieldNote}</p>
         <ul>
           {project.evidence.map((item) => (
             <li key={item}>{item}</li>

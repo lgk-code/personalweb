@@ -44,6 +44,8 @@ const requiredText = [
   'meta name="twitter:card"',
   'meta name="twitter:title"',
   'meta name="twitter:image"',
+  "现场记录",
+  "我习惯把想法落到能跑、能看、能被追问的系统里",
   "每个项目都要能说清楚输入、处理和输出。",
 ];
 

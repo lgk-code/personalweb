@@ -18,6 +18,8 @@ describe("portfolio content", () => {
 
     for (const project of portfolio.projects) {
       expect(project.summary).not.toMatch(/\/home\/lgk|API key|token|password/i);
+      expect(project.fieldNote).toContain("现场记录");
+      expect(project.fieldNote).not.toMatch(/\/home\/lgk|API key|token|password/i);
       expect(project.evidence.length).toBeGreaterThanOrEqual(3);
     }
 

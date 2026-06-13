@@ -81,6 +81,8 @@ const pairs = [
   ["hero kicker", "#ffb4a8", darkSurface],
   ["hero chip text", "#2e2b25", heroChipSurface],
   ["project evidence text", "#2f2d27", colors.panel],
+  ["project field note on panel", "#2f2d27", colors.panel],
+  ["project field note on alternate card", "#2f2d27", projectSurface],
   ["project link", colors.blue, colors.panel],
   ["project link on alternate card", colors.blue, projectSurface],
   ["evidence label", "#c8d9a2", darkSurface],

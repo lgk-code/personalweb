@@ -322,6 +322,14 @@ a:focus-visible {
   line-height: 1.7;
 }
 
+.field-note {
+  margin-top: 1.2rem;
+  border-top: 1px solid rgba(24, 23, 19, 0.18);
+  border-bottom: 1px solid rgba(24, 23, 19, 0.18);
+  padding: 0.9rem 0;
+  color: #2f2d27;
+}
+
 .project-copy ul {
   display: grid;
   gap: 0.75rem;
