@@ -13,7 +13,7 @@
 - Generated bitmap assets live at `public/projects/aifocus-signal.png` and `public/projects/hero-workbench.png`; both can be regenerated with `npm run assets:generate`.
 - Mobile-specific public assets are generated for AIFocus and CodePath so project evidence remains legible on narrow viewports.
 - Open Graph / Twitter metadata and a statically generated `/opengraph-image` PNG route are in place.
-- Generated `/icon` and `src/app/favicon.ico` assets replace the scaffold favicon treatment.
+- Generated `/icon`, `/apple-icon`, and `src/app/favicon.ico` assets replace the scaffold favicon treatment.
 - Public site URL resolution is centralized for metadata, `robots.txt`, and `sitemap.xml`.
 - Metadata routes are covered by unit tests.
 - Homepage metadata includes canonical, author, creator, publisher, Open Graph, Twitter, and JSON-LD signals.

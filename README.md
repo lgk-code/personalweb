@@ -85,7 +85,7 @@ npm run assets:generate
 
 CodePath 项目展示使用相邻项目中已有的公开截图，并将含本机路径的 MCP 原图裁剪为只保留公开对比表的 `public/projects/codepath-mcp-comparison.png`。
 
-站点还包含基于 `next/og` 生成的 `/icon` 和 `/opengraph-image` PNG 路由，用于浏览器标签页和分享预览。
+站点还包含基于 `next/og` 生成的 `/icon`、`/apple-icon` 和 `/opengraph-image` PNG 路由，用于浏览器标签页、移动主屏图标和分享预览。
 
 ## 素材边界
 
