@@ -36,3 +36,8 @@
 - Keep the GitHub repository URL separate from the public site URL.
 - Resolve the public site URL from `NEXT_PUBLIC_SITE_URL`, then Vercel deployment variables, then local development.
 - Use the resolved site URL for metadata, `robots.txt`, and `sitemap.xml`.
+
+## 2026-06-14 — Security Headers
+
+- Add low-risk response headers in `next.config.ts`: `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options`, and `Permissions-Policy`.
+- Do not add a Content Security Policy yet; it needs a separate pass because Next.js inline scripts, JSON-LD, and image optimization can be easy to break.
