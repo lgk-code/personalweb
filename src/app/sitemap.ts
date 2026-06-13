@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getSiteUrl } from "@/lib/site-url";
+import { getSiteUrl } from "../lib/site-url";
 
 const LAST_SIGNIFICANT_UPDATE = new Date("2026-06-14T00:00:00.000Z");
 
