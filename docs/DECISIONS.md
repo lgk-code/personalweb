@@ -28,6 +28,7 @@
 - Minimum local gate is `npm run quality`, which runs tests, lint, build, and sensitive content scanning.
 - Static HTML output checks are part of the local gate because browser screenshot verification can be temporarily unavailable in Codex.
 - Generated asset drift checks run before tests so code and committed PNG outputs stay in sync.
+- Design redline checks prevent regressions such as viewport-scaled font sizes, default scaffold assets, decorative gradients, orb/bokeh motifs, and negative letter spacing.
 - Mirror the same gate in GitHub Actions for `main` pushes and pull requests.
 - Full delivery also requires browser screenshot verification and the three-role subagent review gate described in `AGENTS.md`.
 
