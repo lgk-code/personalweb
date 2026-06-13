@@ -57,7 +57,7 @@ export const portfolio = {
       stack: ["WXT", "React", "TypeScript", "MCP", "Browser extension"],
       links: [
         {
-          label: "Latest release",
+          label: "最新 release",
           href: "https://github.com/lgk-code/codepath-extension/releases/latest",
         },
       ],
