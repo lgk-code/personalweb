@@ -40,6 +40,7 @@
 - Keep the GitHub repository URL separate from the public site URL.
 - Resolve the public site URL from `NEXT_PUBLIC_SITE_URL`, then Vercel deployment variables, then local development.
 - Use the resolved site URL for metadata, `robots.txt`, and `sitemap.xml`.
+- Local development falls back to `http://localhost:$PORT` when `PORT` is set, otherwise `http://localhost:3000`.
 
 ## 2026-06-14 — Security Headers
 
