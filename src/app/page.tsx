@@ -65,14 +65,14 @@ export default function Home() {
   return (
     <main>
       <section className="hero-section">
-        <div className="hero-scene" aria-hidden="true">
-          <span className="scene-frame scene-frame-one" />
-          <span className="scene-frame scene-frame-two" />
-          <span className="scene-frame scene-frame-three" />
-          <span className="scene-line scene-line-one" />
-          <span className="scene-line scene-line-two" />
-          <span className="scene-label scene-label-one">AI focus / code path / review loop</span>
-          <span className="scene-label scene-label-two">build evidence, not theater</span>
+        <div className="hero-media" aria-hidden="true">
+          <Image
+            src="/projects/hero-workbench.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+          />
         </div>
         <nav className="top-nav" aria-label="主导航">
           <a href="#projects">Projects</a>

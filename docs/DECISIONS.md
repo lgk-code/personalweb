@@ -21,6 +21,7 @@
 
 - Do not use Remotion for the first homepage slice; current motion is lightweight CSS only.
 - Use real project screenshots where available. AIFocus uses a generated PNG data-system visual until a safe real product screenshot is available.
+- The first screen should show project evidence immediately, so it uses a generated bitmap composition rather than purely decorative CSS shapes.
 
 ## 2026-06-14 — Verification
 

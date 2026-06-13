@@ -43,7 +43,12 @@ npm run quality
 npm run assets:generate
 ```
 
-该命令会生成 `public/projects/aifocus-signal.png`，用于 AIFocus 项目展示。CodePath 展示使用相邻项目中已有的公开截图。
+该命令会生成：
+
+- `public/projects/aifocus-signal.png`：AIFocus 项目展示图。
+- `public/projects/hero-workbench.png`：由 AIFocus 视觉和 CodePath 截图合成的首屏背景图。
+
+CodePath 项目展示使用相邻项目中已有的公开截图。
 
 站点还包含基于 `next/og` 生成的 `/icon` 和 `/opengraph-image` PNG 路由，用于浏览器标签页和分享预览。
 

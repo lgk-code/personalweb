@@ -4,14 +4,14 @@
 
 - Next.js 16 / TypeScript / Tailwind CSS app has been scaffolded.
 - Git is initialized on `main` and `origin` points to `https://github.com/lgk-code/personalweb.git`.
-- The home page now has a first usable slice: hero, project showcase, working style, and contact links.
+- The home page now has a first usable slice: project-backed hero, project showcase, working style, and contact links.
 - `AIFocus` and `CodePath` content is stored in `src/lib/portfolio.ts` and covered by `src/lib/portfolio.test.ts`.
 - CodePath public screenshots were copied into `public/projects/` for visual project evidence.
-- A generated AIFocus bitmap asset lives at `public/projects/aifocus-signal.png` and can be regenerated with `npm run assets:generate`.
+- Generated bitmap assets live at `public/projects/aifocus-signal.png` and `public/projects/hero-workbench.png`; both can be regenerated with `npm run assets:generate`.
 - Open Graph / Twitter metadata and a generated `/opengraph-image` PNG route are in place.
 - A generated `/icon` PNG route replaces the scaffold favicon treatment.
 - `npm run quality` runs test, lint, build, and sensitive content scanning.
-- Latest local checks passed: `npm test`, `npm run lint`, and `npm run build`.
+- Latest local quality gate passed: `npm run quality`.
 
 ## Next Work
 
