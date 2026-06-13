@@ -1,5 +1,42 @@
 import Image from "next/image";
 import { portfolio, type Project } from "@/lib/portfolio";
+import { site } from "@/lib/site";
+import { getSiteUrl } from "@/lib/site-url";
+
+function StructuredData() {
+  const siteUrl = getSiteUrl().toString();
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: site.handle,
+    alternateName: portfolio.identity.handle,
+    url: siteUrl,
+    sameAs: [site.profileUrl],
+    description: site.description,
+    knowsAbout: ["AI systems", "agent workflows", "product engineering", "source code analysis"],
+    workExample: portfolio.projects.map((project) => ({
+      "@type": "CreativeWork",
+      name: project.name,
+      description: project.summary,
+      url: project.links[0]?.href,
+      keywords: project.stack.join(", "),
+    })),
+    subjectOf: {
+      "@type": "CreativeWork",
+      name: "personalweb",
+      url: site.repositoryUrl,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+      }}
+    />
+  );
+}
 
 function AIFocusVisual() {
   return (
@@ -64,6 +101,7 @@ function ProjectArticle({ project }: { project: Project }) {
 export default function Home() {
   return (
     <main>
+      <StructuredData />
       <section className="hero-section">
         <div className="hero-media" aria-hidden="true">
           <Image
@@ -147,8 +185,8 @@ export default function Home() {
           <p className="section-kicker">Next build</p>
           <h2>接下来会把这个站点继续打磨到能经受截图、代码和多角色评审。</h2>
           <div className="contact-actions">
-            <a href="https://github.com/lgk-code">GitHub</a>
-            <a href="https://github.com/lgk-code/personalweb">personalweb repo</a>
+            <a href={site.profileUrl}>GitHub</a>
+            <a href={site.repositoryUrl}>personalweb repo</a>
           </div>
         </div>
       </section>

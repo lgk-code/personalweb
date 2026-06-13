@@ -11,6 +11,7 @@
 - Open Graph / Twitter metadata and a generated `/opengraph-image` PNG route are in place.
 - A generated `/icon` PNG route replaces the scaffold favicon treatment.
 - Public site URL resolution is centralized for metadata, `robots.txt`, and `sitemap.xml`.
+- Homepage JSON-LD describes the public profile, showcased projects, and repository relationship.
 - `npm run quality` runs test, lint, build, static HTML output checks, and sensitive content scanning.
 - Latest local quality gate passed: `npm run quality`.
 

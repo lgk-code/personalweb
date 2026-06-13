@@ -43,6 +43,8 @@ npm run quality
 `npm run check:html` 会在生产构建后检查首页静态 HTML 的主标题、关键章节、图片 alt、核心资产和敏感/模板痕迹。
 `npm run quality` 会串联测试、lint、构建、HTML 输出检查和敏感信息扫描。
 
+首页包含 JSON-LD 结构化数据，用于描述 `lgk-code`、AIFocus、CodePath 和当前仓库的公开关系。
+
 ## 资产
 
 ```bash

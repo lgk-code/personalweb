@@ -6,6 +6,7 @@ import { site } from "./site";
 describe("site metadata", () => {
   it("keeps public identity, repository, and share text in one place", () => {
     expect(site.handle).toBe("lgk-code");
+    expect(site.profileUrl).toBe("https://github.com/lgk-code");
     expect(site.repositoryUrl).toBe("https://github.com/lgk-code/personalweb");
     expect(site.title).toContain("AI systems");
     expect(site.description).toContain("AIFocus");

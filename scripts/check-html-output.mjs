@@ -21,6 +21,8 @@ const requiredText = [
   "AIFocus",
   "CodePath",
   "Evidence chain",
+  "application/ld+json",
+  "https://schema.org",
   "每个项目都要能说清楚输入、处理和输出。",
 ];
 
