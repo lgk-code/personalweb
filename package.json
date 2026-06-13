@@ -14,6 +14,7 @@
     "assets:generate": "node scripts/generate-assets.mjs",
     "check:assets": "node scripts/check-generated-assets.mjs",
     "check:design": "node scripts/check-design-redlines.mjs",
+    "check:content": "node scripts/check-content-redlines.mjs",
     "check:contrast": "node scripts/check-contrast.mjs",
     "check:asset-privacy": "node scripts/check-asset-privacy.mjs",
     "check:html": "node scripts/check-html-output.mjs",
@@ -24,7 +25,7 @@
     "check:links:live": "node scripts/check-public-links-live.mjs",
     "check:audit": "node scripts/check-audit.mjs",
     "scan:secrets": "node scripts/scan-secrets.mjs",
-    "quality": "npm run check:assets && npm test && npm run lint && npm run check:design && npm run check:contrast && npm run check:asset-privacy && npm run build && npm run check:html && npm run check:routes && npm run check:smoke && npm run check:a11y && npm run check:links && npm run scan:secrets && npm run check:audit"
+    "quality": "npm run check:assets && npm test && npm run lint && npm run check:design && npm run check:content && npm run check:contrast && npm run check:asset-privacy && npm run build && npm run check:html && npm run check:routes && npm run check:smoke && npm run check:a11y && npm run check:links && npm run scan:secrets && npm run check:audit"
   },
   "dependencies": {
     "next": "16.2.9",

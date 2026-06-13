@@ -29,6 +29,7 @@
 - Static HTML output checks are part of the local gate because browser screenshot verification can be temporarily unavailable in Codex.
 - Generated asset drift checks run before tests so code and committed PNG outputs stay in sync.
 - Design redline checks prevent regressions such as viewport-scaled font sizes, default scaffold assets, decorative gradients, orb/bokeh motifs, and negative letter spacing.
+- Content redline checks scan source files for filler/template wording so real project copy does not regress into placeholders.
 - Contrast checks statically enforce the main text/background color pairs at WCAG AA regular-text contrast.
 - Public asset privacy scans inspect printable metadata in image and icon files for local paths or credential markers.
 - Route output checks read the production build manifests to keep the homepage, 404, image routes, `robots.txt`, and `sitemap.xml` static.

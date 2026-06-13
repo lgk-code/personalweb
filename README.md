@@ -36,6 +36,7 @@ npm run lint
 npm run build
 npm run check:assets
 npm run check:design
+npm run check:content
 npm run check:contrast
 npm run check:asset-privacy
 npm run check:html
@@ -52,6 +53,7 @@ npm run quality
 当前测试覆盖公开身份、项目展示事实、站点 URL 解析、metadata routes 和关键 PNG/ICO 视觉资产，避免 AIFocus / CodePath 描述失真、站点 metadata 跑偏或资产被误替换。
 `npm run check:assets` 会重新生成关键 PNG，并确认仓库里的生成结果没有漂移。
 `npm run check:design` 会扫描设计红线，例如 viewport 字体缩放、渐变/orb/bokeh 装饰、默认脚手架素材和负 letter-spacing。
+`npm run check:content` 会扫描源码里的 lorem、placeholder、dummy、template 等模板痕迹，避免页面内容退回占位状态。
 `npm run check:contrast` 会静态检查主要文字/背景配色，要求核心文本组合满足 WCAG AA 常规文本对比度。
 `npm run check:asset-privacy` 会扫描公开图片/图标中的可打印元数据，避免本机路径或凭据关键词混入资产。
 `npm run check:html` 会在生产构建后检查首页静态 HTML 的主标题、关键章节、图片 alt、核心资产和敏感/模板痕迹。
@@ -61,7 +63,7 @@ npm run quality
 `npm run check:links` 会在生产构建后检查首页公开 HTTPS 链接是否在 allowlist 内，并禁止渲染尚未公开的项目仓库链接。
 `npm run check:links:live` 会在生产构建后实际访问首页公开链接；这是终审前手动检查，不进入默认 `quality`，避免 CI 受网络波动影响。
 `npm run check:audit` 会运行 npm audit，要求 moderate 及以上漏洞为 0。
-`npm run quality` 会串联资产同步、测试、lint、设计红线、对比度检查、公开资产隐私扫描、构建、HTML 输出检查、路由输出检查、运行时 smoke 检查、可访问性检查、公开链接检查、敏感信息扫描和 audit 检查。
+`npm run quality` 会串联资产同步、测试、lint、设计红线、内容红线、对比度检查、公开资产隐私扫描、构建、HTML 输出检查、路由输出检查、运行时 smoke 检查、可访问性检查、公开链接检查、敏感信息扫描和 audit 检查。
 
 GitHub Actions 会在 `main` push 和 pull request 上运行同一套质量门禁。
 
