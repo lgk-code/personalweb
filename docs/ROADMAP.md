@@ -42,4 +42,6 @@
 
 Browser verification against `http://localhost:3000` was blocked by the Browser plugin enterprise network policy. Do not claim final visual acceptance until a real browser desktop and mobile screenshot review has been completed.
 
+`https://github.com/lgk-code/personalweb` is the intended canonical repository binding, but anonymous access currently returns 404. Keep it out of rendered public pages until the repository is pushed and public, or until the project intentionally treats it as a private repository reference only.
+
 `npm audit --audit-level=moderate` currently reports [GHSA-qx2v-qp2m-jg93](https://github.com/advisories/GHSA-qx2v-qp2m-jg93), a moderate PostCSS advisory fixed in `postcss@8.5.10`, through `next@16.2.9`'s internal dependency tree. The advisory is documented here because `npm audit fix --force` proposes a breaking downgrade to an old Next.js version; do not apply that automatically. `npm run check:audit` allows only this known advisory chain and fails on unknown moderate-or-higher advisories, so revisit when a safe Next.js patch is available.
