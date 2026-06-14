@@ -60,6 +60,8 @@ Later on 2026-06-14, a second static-only subagent midreview scored 93 (vibe cod
 
 The in-app Browser screenshot API can time out on `Page.captureScreenshot` even when DOM inspection works. For visual acceptance, use Browser DOM checks for layout/console/motion state and Edge/CDP screenshots for rendered evidence when needed.
 
+Full-page screenshot tools that do not actually scroll can capture below-fold lazy images before they load. For CodePath visual review, scroll the CodePath project card into view first, then capture the viewport; this confirms `codepath-mcp-comparison.png` is rendered and legible without changing the site's preload policy.
+
 `https://github.com/lgk-code/personalweb` is publicly reachable as of 2026-06-15 and is rendered as the site source-code callout. Keep AIFocus omitted unless it has a safe public URL.
 
 `next@16.2.9` still declares an internal `postcss@8.4.31` dependency, which is affected by [GHSA-qx2v-qp2m-jg93](https://github.com/advisories/GHSA-qx2v-qp2m-jg93). The project uses an npm override to force Next's internal PostCSS to `8.5.10`, so `npm audit --audit-level=moderate` and `npm run check:audit` currently pass with zero advisories. Revisit the override when Next ships the patched PostCSS version upstream.
