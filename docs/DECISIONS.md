@@ -33,6 +33,7 @@
 - Project motion should be tied to the showcased system: AIFocus uses information-chain scan motion, while CodePath uses side-panel focus/lock motion rather than sharing a single generic effect.
 - Project presentation should lean toward system records instead of closed portfolio cards: use record labels, input/process/output workflow traces, open row borders, and real project evidence before adding decorative framing.
 - Scroll reveal motion can shift content into place, but it must not lower project-card opacity because screenshot timing should not make critical copy look disabled or unreadable.
+- Operating-style content should stay grounded in observable practice. When it risks becoming abstract, prefer compact quality signals such as local gates, browser checks, and public-content boundaries.
 
 ## 2026-06-14 — Verification
 
