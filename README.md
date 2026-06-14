@@ -89,6 +89,8 @@ npm run assets:generate
 
 CodePath 项目展示使用相邻项目中已有的公开截图，并将含本机路径的 MCP 原图裁剪为只保留公开对比表的 `public/projects/codepath-mcp-comparison.png`。
 
+生成脚本会把 Next.js 随包提供的 Geist WOFF2 字体嵌入中间 SVG，再通过 Sharp 栅格化，避免本机和 GitHub Actions 因系统字体不同导致 PNG 漂移。
+
 站点还包含基于 `next/og` 生成的 `/icon`、`/apple-icon` 和 `/opengraph-image` PNG 路由，以及 `/manifest.webmanifest` 站点 manifest，用于浏览器标签页、移动主屏图标和分享预览。
 
 ## 素材边界

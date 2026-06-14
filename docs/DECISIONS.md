@@ -28,6 +28,7 @@
 - Do not use Remotion for the first homepage slice; current motion is lightweight CSS only.
 - Use real project screenshots where available. AIFocus uses a generated PNG data-system visual until a safe real product screenshot is available.
 - The first screen should show project evidence immediately, so it uses a generated bitmap composition rather than purely decorative CSS shapes.
+- Generated SVG-to-PNG assets embed Next.js bundled Geist WOFF2 fonts before Sharp rasterization so local WSL output and GitHub Actions output do not drift due to host font differences.
 - 2026-06-15 motion remains CSS-only: desktop may use slow hero drift and project scanline/reveal motion, while small screens disable continuous hero drift and `prefers-reduced-motion: reduce` explicitly disables the motion layer.
 - Project motion should be tied to the showcased system: AIFocus uses information-chain scan motion, while CodePath uses side-panel focus/lock motion rather than sharing a single generic effect.
 - Project presentation should lean toward system records instead of closed portfolio cards: use record labels, open row borders, and real project evidence before adding decorative framing.
@@ -45,7 +46,7 @@
 - Route output checks read the production build manifests to keep the homepage, 404, image routes, `manifest.webmanifest`, `robots.txt`, and `sitemap.xml` static.
 - Runtime smoke checks start `next start` on an ephemeral local port and verify key routes, `manifest.webmanifest`, and actual security response headers.
 - Static accessibility output checks cover landmarks, skip targets, labelled navigation, focus outlines, reduced motion, image alt text, and link safety.
-- Public link checks use a static allowlist for rendered homepage and 404 HTTPS links and prevent not-yet-public repository links from appearing. The allowlist includes the GitHub profile, the CodePath release page, and the CodePath extension download.
+- Public link checks use a static allowlist for rendered homepage and 404 HTTPS links and prevent not-yet-public repository links from appearing. The allowlist includes the GitHub profile, the personalweb source repository, the CodePath release page, and the CodePath extension download.
 - Live public link checks cover rendered homepage and 404 links as an opt-in final-review command, but stay out of `npm run quality` to avoid network flakes in CI. The script uses `curl` so WSL proxy settings are honored consistently, and strips query/hash from redirected URLs before printing results.
 - Project docs consistency checks keep the repository binding, living `AGENTS.md` rule, `/neat` context-hygiene rule, real browser screenshot requirement, and three-agent final review gate from disappearing by accident.
 - Audit checks require zero moderate-or-higher advisories.

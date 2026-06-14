@@ -11,6 +11,7 @@
 - A CodePath public screenshot was copied into `public/projects/` for visual project evidence.
 - A CodePath MCP comparison crop is included as a second public-safe screenshot, with the original local path area excluded.
 - Generated bitmap assets live at `public/projects/aifocus-signal.png` and `public/projects/hero-workbench.png`; both can be regenerated with `npm run assets:generate`.
+- Generated SVG-to-PNG assets embed bundled Next.js Geist fonts before Sharp rasterization so local and CI outputs remain stable.
 - Mobile-specific public assets are generated for AIFocus and CodePath so project evidence remains legible on narrow viewports.
 - Open Graph / Twitter metadata and a statically generated `/opengraph-image` PNG route are in place.
 - Generated `/icon`, `/apple-icon`, and `src/app/favicon.ico` assets replace the scaffold favicon treatment.
@@ -38,6 +39,7 @@
 - 2026-06-15 live public link check passed with `npm run check:links:live`.
 - 2026-06-15 project section motion was differentiated: AIFocus keeps information-chain scan motion, CodePath uses side-panel focus/lock motion, and the desktop CodePath card reverses the text/media order to reduce repeated case-study card rhythm.
 - 2026-06-15 project items now read more like system records than closed portfolio cards: each item has a `System log` record label, open top/bottom row borders, and a documented AIFocus public-evidence boundary in `README.md`.
+- 2026-06-15 GitHub Actions Quality passed on `main` after generated asset font embedding removed local/CI screenshot drift.
 
 ## Next Work
 
