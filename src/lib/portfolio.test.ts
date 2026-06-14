@@ -21,6 +21,11 @@ describe("portfolio content", () => {
       expect(project.record).not.toMatch(/\/home\/lgk|API key|token|password/i);
       expect(project.fieldNote).toContain("现场记录");
       expect(project.fieldNote).not.toMatch(/\/home\/lgk|API key|token|password/i);
+      expect(project.workflow).toHaveLength(3);
+      expect(project.workflow.map((step) => step.label)).toEqual(["Input", "Process", "Output"]);
+      for (const step of project.workflow) {
+        expect(step.value).not.toMatch(/\/home\/lgk|API key|token|password/i);
+      }
       expect(project.evidence.length).toBeGreaterThanOrEqual(3);
     }
 

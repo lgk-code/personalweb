@@ -99,6 +99,14 @@ function ProjectArticle({ project }: { project: Project }) {
         <h3 id={titleId}>{project.name}</h3>
         <p>{project.summary}</p>
         <p className="field-note">{project.fieldNote}</p>
+        <dl className="workflow-trace" aria-label={`${project.name} 工作流`}>
+          {project.workflow.map((step) => (
+            <div key={`${project.name}-${step.label}`}>
+              <dt>{step.label}</dt>
+              <dd>{step.value}</dd>
+            </div>
+          ))}
+        </dl>
         <ul>
           {project.evidence.map((item) => (
             <li key={item}>{item}</li>

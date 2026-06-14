@@ -5,6 +5,10 @@ export type Project = {
   role: string;
   summary: string;
   fieldNote: string;
+  workflow: {
+    label: string;
+    value: string;
+  }[];
   evidence: string[];
   stack: string[];
   links: {
@@ -35,6 +39,11 @@ export const portfolio = {
         "AIFocus 面向 AI 从业者、内容创作者、研究者和 Agent 用户，把高噪声 AI 信息流处理成可读、可搜、可订阅、可被 Agent 调用的精选服务。",
       fieldNote:
         "现场记录：它最像一条信息生产线，信源、评分、聚类、日报和 Skill 接在一起，目标是让 AI 信息流少一点噪声。",
+      workflow: [
+        { label: "Input", value: "T1/T1.5/T2 信源与 AI 动态" },
+        { label: "Process", value: "相关性预筛、评分、聚类、主条选择" },
+        { label: "Output", value: "Web、日报、RSS、REST API、Skill" },
+      ],
       evidence: [
         "覆盖精选信息流、全部 AI 动态、AI 日报、搜索筛选、RSS、REST API 和 Skill 接入",
         "使用信源抓取、AI 相关性预筛、摘要分类、多维评分、事件聚类和主条选择形成处理链路",
@@ -52,6 +61,11 @@ export const portfolio = {
         "CodePath 是面向 GitHub 源码阅读的浏览器扩展，在仓库页面注入侧边栏，帮助用户理解项目结构、技术栈、功能路径、当前文件和后续追问。",
       fieldNote:
         "现场记录：它直接长在 GitHub 页面里，用侧边栏把项目概览、文件解释、功能路径和继续追问放到同一个阅读现场。",
+      workflow: [
+        { label: "Input", value: "GitHub 仓库、目录树、当前文件" },
+        { label: "Process", value: "项目概览、路径分析、上下文追问" },
+        { label: "Output", value: "侧边栏解释、源码链接、推荐问题" },
+      ],
       evidence: [
         "支持项目概览、功能路径分析、当前文件解释、连续追问和推荐问题",
         "兼容 OpenAI Chat Completions 风格模型接口，并支持 Anthropic 格式识别",
