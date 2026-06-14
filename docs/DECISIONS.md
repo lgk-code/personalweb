@@ -30,6 +30,7 @@
 - The first screen should show project evidence immediately, so it uses a generated bitmap composition rather than purely decorative CSS shapes.
 - 2026-06-15 motion remains CSS-only: desktop may use slow hero drift and project scanline/reveal motion, while small screens disable continuous hero drift and `prefers-reduced-motion: reduce` explicitly disables the motion layer.
 - Project motion should be tied to the showcased system: AIFocus uses information-chain scan motion, while CodePath uses side-panel focus/lock motion rather than sharing a single generic effect.
+- Project presentation should lean toward system records instead of closed portfolio cards: use record labels, open row borders, and real project evidence before adding decorative framing.
 
 ## 2026-06-14 — Verification
 

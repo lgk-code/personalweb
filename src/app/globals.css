@@ -284,19 +284,20 @@ a:focus-visible {
 
 .project-grid {
   display: grid;
-  gap: 1rem;
+  gap: 2.5rem;
 }
 
 .project-card {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   min-height: 520px;
   overflow: hidden;
-  border: 1px solid var(--ink);
-  border-radius: 6px;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
   background: #fffef8;
   transition:
-    box-shadow 220ms ease,
+    border-color 220ms ease,
     transform 220ms ease;
 }
 
@@ -319,8 +320,8 @@ a:focus-visible {
 }
 
 .project-card:hover {
-  box-shadow: 0 1.1rem 2.2rem rgba(24, 23, 19, 0.12);
-  transform: translateY(-2px);
+  border-color: rgba(179, 38, 30, 0.8);
+  transform: translateY(-1px);
 }
 
 .project-visual {
@@ -432,6 +433,17 @@ a:focus-visible {
   flex-direction: column;
   justify-content: center;
   padding: 2.5rem;
+}
+
+.project-record {
+  width: fit-content;
+  margin: 0 0 0.9rem;
+  border-bottom: 1px solid rgba(179, 38, 30, 0.6);
+  color: #766f63;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .project-copy h3 {
@@ -819,6 +831,11 @@ a:focus-visible {
 
   .project-copy {
     padding: 1.25rem;
+  }
+
+  .project-record {
+    max-width: 100%;
+    font-size: 0.76rem;
   }
 
   .project-copy h3 {

@@ -37,10 +37,11 @@
 - 2026-06-15 final-style three-agent review passed: vibe coder 92, native design 92, destructive quality 92, with no redlines.
 - 2026-06-15 live public link check passed with `npm run check:links:live`.
 - 2026-06-15 project section motion was differentiated: AIFocus keeps information-chain scan motion, CodePath uses side-panel focus/lock motion, and the desktop CodePath card reverses the text/media order to reduce repeated case-study card rhythm.
+- 2026-06-15 project items now read more like system records than closed portfolio cards: each item has a `System log` record label, open top/bottom row borders, and a documented AIFocus public-evidence boundary in `README.md`.
 
 ## Next Work
 
-- Reduce remaining case-study/card feel in the project section without losing the strong real-project evidence.
+- Continue reducing portfolio-template feel through stronger project-specific composition, while preserving readable real-project evidence.
 - Add a concise AIFocus evidence note when a safe public source or screenshot is available, so the private-project claims remain traceable without exposing local paths.
 
 ## Midreview Notes

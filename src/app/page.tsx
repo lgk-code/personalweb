@@ -94,6 +94,7 @@ function ProjectArticle({ project }: { project: Project }) {
     <article className={`project-card project-card-${project.visual}`} aria-labelledby={titleId}>
       <ProjectVisual visual={project.visual} />
       <div className="project-copy">
+        <p className="project-record">{project.record}</p>
         <p className="section-kicker">{project.role}</p>
         <h3 id={titleId}>{project.name}</h3>
         <p>{project.summary}</p>
