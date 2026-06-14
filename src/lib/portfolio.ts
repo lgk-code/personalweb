@@ -89,6 +89,20 @@ export const portfolio = {
     "用工程化验证把 vibe 变成可复现质量",
     "让 agent、工具和人各做自己最擅长的部分",
   ],
+  qualitySignals: [
+    {
+      label: "Quality gate",
+      value: "assets / test / lint / build / a11y / secrets / audit",
+    },
+    {
+      label: "Browser pass",
+      value: "desktop + mobile screenshots, motion state, reduced-motion check",
+    },
+    {
+      label: "Truth boundary",
+      value: "public links only, generated safe assets, no private project paths",
+    },
+  ],
   contactHeading: "看公开代码与 release；如果方向对味，就从一个具体系统聊起。",
   evidenceChains: [
     {

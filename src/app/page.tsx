@@ -212,6 +212,14 @@ export default function Home() {
               </li>
             ))}
           </ol>
+          <dl className="quality-ledger" aria-label="质量信号">
+            {portfolio.qualitySignals.map((signal) => (
+              <div key={signal.label}>
+                <dt>{signal.label}</dt>
+                <dd>{signal.value}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 

@@ -629,6 +629,43 @@ a:focus-visible {
   line-height: 1.35;
 }
 
+.quality-ledger {
+  display: grid;
+  gap: 0;
+  margin: 1.4rem 0 0;
+  border-top: 1px solid rgba(24, 23, 19, 0.45);
+  border-bottom: 1px solid rgba(24, 23, 19, 0.45);
+}
+
+.quality-ledger div {
+  display: grid;
+  grid-template-columns: minmax(8.5rem, 0.44fr) minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.9rem 0;
+}
+
+.quality-ledger div + div {
+  border-top: 1px solid rgba(24, 23, 19, 0.18);
+}
+
+.quality-ledger dt {
+  margin: 0;
+  color: var(--red);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.78rem;
+  font-weight: 760;
+  text-transform: uppercase;
+}
+
+.quality-ledger dd {
+  margin: 0;
+  color: #2f2d27;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
 .contact-layout {
   display: grid;
   gap: 1.5rem;
@@ -935,6 +972,11 @@ a:focus-visible {
 
   .method-list li {
     grid-template-columns: 3rem minmax(0, 1fr);
+  }
+
+  .quality-ledger div {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
   }
 
   .evidence-list li {

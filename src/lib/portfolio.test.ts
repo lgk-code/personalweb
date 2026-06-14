@@ -63,4 +63,17 @@ describe("portfolio content", () => {
       expect(chain.body).not.toMatch(/\/home\/lgk|API key|token|password/i);
     }
   });
+
+  it("documents quality signals without leaking local details", () => {
+    expect(portfolio.qualitySignals).toHaveLength(3);
+    expect(portfolio.qualitySignals.map((signal) => signal.label)).toEqual([
+      "Quality gate",
+      "Browser pass",
+      "Truth boundary",
+    ]);
+
+    for (const signal of portfolio.qualitySignals) {
+      expect(signal.value).not.toMatch(/\/home\/lgk|API key|token|password/i);
+    }
+  });
 });
