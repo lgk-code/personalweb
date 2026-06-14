@@ -7,6 +7,7 @@
 - The home page now has a first usable slice: project-backed hero, project showcase, evidence chain, working style, and contact links.
 - `AIFocus` and `CodePath` content is stored in `src/lib/portfolio.ts` and covered by `src/lib/portfolio.test.ts`.
 - Project cards include short field notes so each showcased system carries a little more working-context signal than a generic portfolio card.
+- Project cards include input/process/output workflow traces so each showcased system reads as a working pipeline rather than a generic case-study card.
 - Key PNG visuals are covered by asset metadata and byte-budget tests.
 - A CodePath public screenshot was copied into `public/projects/` for visual project evidence.
 - A CodePath MCP comparison crop is included as a second public-safe screenshot, with the original local path area excluded.
@@ -40,6 +41,7 @@
 - 2026-06-15 project section motion was differentiated: AIFocus keeps information-chain scan motion, CodePath uses side-panel focus/lock motion, and the desktop CodePath card reverses the text/media order to reduce repeated case-study card rhythm.
 - 2026-06-15 project items now read more like system records than closed portfolio cards: each item has a `System log` record label, open top/bottom row borders, and a documented AIFocus public-evidence boundary in `README.md`.
 - 2026-06-15 GitHub Actions Quality passed on `main` after generated asset font embedding removed local/CI screenshot drift.
+- 2026-06-15 project records gained input/process/output workflow traces, and scroll reveal now keeps project-card opacity at full strength so screenshot timing cannot make copy look faded.
 
 ## Next Work
 

@@ -31,7 +31,8 @@
 - Generated SVG-to-PNG assets embed Next.js bundled Geist WOFF2 fonts before Sharp rasterization so local WSL output and GitHub Actions output do not drift due to host font differences.
 - 2026-06-15 motion remains CSS-only: desktop may use slow hero drift and project scanline/reveal motion, while small screens disable continuous hero drift and `prefers-reduced-motion: reduce` explicitly disables the motion layer.
 - Project motion should be tied to the showcased system: AIFocus uses information-chain scan motion, while CodePath uses side-panel focus/lock motion rather than sharing a single generic effect.
-- Project presentation should lean toward system records instead of closed portfolio cards: use record labels, open row borders, and real project evidence before adding decorative framing.
+- Project presentation should lean toward system records instead of closed portfolio cards: use record labels, input/process/output workflow traces, open row borders, and real project evidence before adding decorative framing.
+- Scroll reveal motion can shift content into place, but it must not lower project-card opacity because screenshot timing should not make critical copy look disabled or unreadable.
 
 ## 2026-06-14 — Verification
 
