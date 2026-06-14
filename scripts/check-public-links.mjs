@@ -25,6 +25,7 @@ const links = [
 ];
 const allowedLinks = new Set([
   "https://github.com/lgk-code",
+  "https://github.com/lgk-code/personalweb",
   "https://github.com/lgk-code/codepath-extension/releases/latest",
   "https://github.com/lgk-code/codepath-extension/releases/latest/download/CodePath.zip",
 ]);
@@ -40,7 +41,7 @@ if (unexpectedLinks.length > 0) {
 }
 
 for (const link of links) {
-  if (/github\.com\/lgk-code\/(?:AIFocus|personalweb)\b/i.test(link)) {
+  if (/github\.com\/lgk-code\/AIFocus\b/i.test(link)) {
     fail(`private or not-yet-public repository link rendered: ${link}`);
   }
 }

@@ -15,7 +15,7 @@
 
 - Treat `https://github.com/lgk-code/personalweb` as the canonical repository binding for this project.
 - Use `https://github.com/lgk-code/personalweb.git` as `origin` when the repository is initialized locally.
-- Keep the repository binding in project docs. The repository is publicly reachable as of 2026-06-15, but the public page can keep omitting the source link until the site intentionally adds a personalweb source-code callout.
+- Keep the repository binding in project docs. The repository is publicly reachable as of 2026-06-15 and the public page may render it as a source-code callout.
 
 ## 2026-06-14 — Project Showcase Sources
 

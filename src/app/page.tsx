@@ -213,6 +213,7 @@ export default function Home() {
           <h2>{portfolio.contactHeading}</h2>
           <div className="contact-actions">
             <a href={site.profileUrl}>GitHub</a>
+            <a href={site.repositoryUrl}>本站源码</a>
             {codePathReleaseLink ? (
               <a href={codePathReleaseLink.href}>{codePathReleaseLink.label}</a>
             ) : null}

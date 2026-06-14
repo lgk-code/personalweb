@@ -33,6 +33,7 @@ const requiredText = [
   "跳到项目",
   "application/ld+json",
   "https://schema.org",
+  "github.com/lgk-code/personalweb",
   "github.com/lgk-code/codepath-extension/releases/latest",
   "github.com/lgk-code/codepath-extension/releases/latest/download/CodePath.zip",
   'rel="canonical"',
@@ -183,7 +184,7 @@ if (!imageTags.some((tag) => tag.includes("CodePath MCP"))) {
 }
 
 if (
-  /\/home\/lgk|API key|token|password|next\.svg|vercel\.svg|github\.com\/lgk-code\/AIFocus|github\.com\/lgk-code\/personalweb/i.test(
+  /\/home\/lgk|API key|token|password|next\.svg|vercel\.svg|github\.com\/lgk-code\/AIFocus/i.test(
     combinedHtml
   )
 ) {
