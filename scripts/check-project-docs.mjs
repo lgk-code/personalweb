@@ -45,9 +45,7 @@ const workflow = readRequiredFile(files.workflow);
 const packageJson = readRequiredFile(files.packageJson);
 
 requireFragments("AGENTS.md", agents, [
-  "https://github.com/lgk-code/personalweb",
-  "https://github.com/lgk-code/personalweb.git",
-  "`AGENTS.md` 是活的项目级规则文件",
+  "`AGENTS.md` 只保留下次 agent 开发时必须遵守的规则",
   "主动编辑、压缩、重组或删除已经过时的内容",
   "超过 75%",
   "/neat",
@@ -55,9 +53,8 @@ requireFragments("AGENTS.md", agents, [
   "CodePath",
   "真实浏览器",
   "桌面和移动端",
-  "重度 vibe coder",
-  "原生审美设计师",
-  "破坏性质量官",
+  "docs/REVIEW-RUBRIC.md",
+  "三 Agent 终审",
   "大于或等于 90",
 ]);
 
@@ -78,6 +75,7 @@ requireFragments("docs/ROADMAP.md", roadmap, [
 
 requireFragments("docs/DECISIONS.md", decisions, [
   "lgk-code/personalweb",
+  "https://github.com/lgk-code/personalweb.git",
   "AIFocus",
   "CodePath",
   "npm run quality",

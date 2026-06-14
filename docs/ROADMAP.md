@@ -1,6 +1,6 @@
 # personalweb Roadmap
 
-## Current State — 2026-06-14
+## Current State — 2026-06-15
 
 - Next.js 16 / TypeScript / hand-written CSS app has been scaffolded.
 - Git is initialized on `main` and `origin` points to `https://github.com/lgk-code/personalweb.git`.
@@ -30,7 +30,7 @@
 - Dependabot is configured for npm and GitHub Actions updates.
 - Runtime dependencies are exact-pinned; `.npmrc` sets `save-exact=true` to preserve that convention during future installs.
 - `docs/REVIEW-RUBRIC.md` defines the three-agent final review scoring rules.
-- Latest local quality gate passed: `npm run quality`.
+- Latest local quality gate passed: 2026-06-15, `npm run quality`.
 
 ## Next Work
 
@@ -48,6 +48,6 @@ Later on 2026-06-14, a second static-only subagent midreview scored 93 (vibe cod
 
 Browser verification against `http://localhost:3000` was blocked by the Browser plugin enterprise network policy. Do not claim final visual acceptance until a real browser desktop and mobile screenshot review has been completed.
 
-`https://github.com/lgk-code/personalweb` is the intended canonical repository binding, but anonymous access currently returns 404. Keep it out of rendered public pages until the repository is pushed and public, or until the project intentionally treats it as a private repository reference only.
+`https://github.com/lgk-code/personalweb` is publicly reachable as of 2026-06-15. The rendered public page can keep omitting the repository link until the site intentionally adds a personalweb source-code callout.
 
 `next@16.2.9` still declares an internal `postcss@8.4.31` dependency, which is affected by [GHSA-qx2v-qp2m-jg93](https://github.com/advisories/GHSA-qx2v-qp2m-jg93). The project uses an npm override to force Next's internal PostCSS to `8.5.10`, so `npm audit --audit-level=moderate` and `npm run check:audit` currently pass with zero advisories. Revisit the override when Next ships the patched PostCSS version upstream.
