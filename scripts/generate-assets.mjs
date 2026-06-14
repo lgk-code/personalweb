@@ -1,4 +1,5 @@
 import { mkdir, writeFile } from "node:fs/promises";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
 
@@ -14,6 +15,35 @@ const codePathBrowserPath = path.join(sourceAssetDir, "codepath-browser.png");
 const codePathPanelPath = path.join(outputDir, "codepath-panel-mobile.png");
 const heroPath = path.join(outputDir, "hero-workbench.png");
 const faviconPath = path.join(appDir, "favicon.ico");
+const assetSansFont = readFileSync(
+  path.join(process.cwd(), "node_modules", "next", "dist", "next-devtools", "server", "font", "geist-latin.woff2")
+).toString("base64");
+const assetMonoFont = readFileSync(
+  path.join(
+    process.cwd(),
+    "node_modules",
+    "next",
+    "dist",
+    "next-devtools",
+    "server",
+    "font",
+    "geist-mono-latin.woff2"
+  )
+).toString("base64");
+const fontDefs = `
+  <defs>
+    <style>
+      @font-face {
+        font-family: "AssetSans";
+        src: url("data:font/woff2;base64,${assetSansFont}") format("woff2");
+      }
+      @font-face {
+        font-family: "AssetMono";
+        src: url("data:font/woff2;base64,${assetMonoFont}") format("woff2");
+      }
+    </style>
+  </defs>
+`;
 
 const stages = [
   ["01", "Sources", "T1 feeds and trusted AI channels"],
@@ -31,9 +61,9 @@ const stageCards = stages
     return `
       <g>
         <rect x="${x}" y="${y}" width="318" height="154" rx="8" fill="#f7f3ea" stroke="#181713" stroke-width="2" />
-        <text x="${x + 24}" y="${y + 42}" fill="#286a4b" font-size="22" font-weight="700" font-family="Geist Mono, ui-monospace, monospace">${index}</text>
-        <text x="${x + 24}" y="${y + 82}" fill="#181713" font-size="30" font-weight="760" font-family="Geist, Arial, sans-serif">${title}</text>
-        <text x="${x + 24}" y="${y + 118}" fill="#5f5b52" font-size="17" font-family="Geist, Arial, sans-serif">${body}</text>
+        <text x="${x + 24}" y="${y + 42}" fill="#286a4b" font-size="22" font-weight="700" font-family="AssetMono">${index}</text>
+        <text x="${x + 24}" y="${y + 82}" fill="#181713" font-size="30" font-weight="760" font-family="AssetSans">${title}</text>
+        <text x="${x + 24}" y="${y + 118}" fill="#5f5b52" font-size="17" font-family="AssetSans">${body}</text>
       </g>
     `;
   })
@@ -49,12 +79,13 @@ const connectorLines = `
 
 const svg = `
 <svg width="1280" height="760" viewBox="0 0 1280 760" xmlns="http://www.w3.org/2000/svg">
+  ${fontDefs}
   <rect width="1280" height="760" fill="#eee5d5" />
   <rect x="40" y="40" width="1200" height="680" rx="14" fill="#fffdf8" stroke="#181713" stroke-width="3" />
   <rect x="70" y="70" width="1140" height="96" rx="8" fill="#151713" />
-  <text x="104" y="113" fill="#f7f3ea" font-size="30" font-weight="760" font-family="Geist, Arial, sans-serif">AIFocus signal system</text>
-  <text x="104" y="145" fill="#c8d9a2" font-size="18" font-family="Geist Mono, ui-monospace, monospace">from noisy AI feeds to readable daily signal</text>
-  <text x="948" y="128" fill="#f7f3ea" font-size="18" font-family="Geist Mono, ui-monospace, monospace">worker / API / Skill</text>
+  <text x="104" y="113" fill="#f7f3ea" font-size="30" font-weight="760" font-family="AssetSans">AIFocus signal system</text>
+  <text x="104" y="145" fill="#c8d9a2" font-size="18" font-family="AssetMono">from noisy AI feeds to readable daily signal</text>
+  <text x="948" y="128" fill="#f7f3ea" font-size="18" font-family="AssetMono">worker / API / Skill</text>
   ${connectorLines}
   ${stageCards}
   <rect x="70" y="645" width="180" height="20" rx="4" fill="#286a4b" />
@@ -71,9 +102,9 @@ const mobileStageCards = stages
     return `
       <g>
         <rect x="56" y="${y}" width="648" height="88" rx="8" fill="#fffdf8" stroke="#181713" stroke-width="2" />
-        <text x="84" y="${y + 38}" fill="#286a4b" font-size="20" font-weight="700" font-family="Geist Mono, ui-monospace, monospace">${index}</text>
-        <text x="154" y="${y + 38}" fill="#181713" font-size="28" font-weight="760" font-family="Geist, Arial, sans-serif">${title}</text>
-        <text x="154" y="${y + 66}" fill="#5f5b52" font-size="18" font-family="Geist, Arial, sans-serif">${body}</text>
+        <text x="84" y="${y + 38}" fill="#286a4b" font-size="20" font-weight="700" font-family="AssetMono">${index}</text>
+        <text x="154" y="${y + 38}" fill="#181713" font-size="28" font-weight="760" font-family="AssetSans">${title}</text>
+        <text x="154" y="${y + 66}" fill="#5f5b52" font-size="18" font-family="AssetSans">${body}</text>
       </g>
     `;
   })
@@ -81,11 +112,12 @@ const mobileStageCards = stages
 
 const mobileSvg = `
 <svg width="760" height="940" viewBox="0 0 760 940" xmlns="http://www.w3.org/2000/svg">
+  ${fontDefs}
   <rect width="760" height="940" fill="#eee5d5" />
   <rect x="28" y="28" width="704" height="884" rx="14" fill="#f9f7ef" stroke="#181713" stroke-width="3" />
   <rect x="56" y="58" width="648" height="84" rx="8" fill="#151713" />
-  <text x="84" y="104" fill="#f7f3ea" font-size="30" font-weight="760" font-family="Geist, Arial, sans-serif">AIFocus signal path</text>
-  <text x="84" y="130" fill="#c8d9a2" font-size="16" font-family="Geist Mono, ui-monospace, monospace">feeds to daily signal, API, RSS and Skill</text>
+  <text x="84" y="104" fill="#f7f3ea" font-size="30" font-weight="760" font-family="AssetSans">AIFocus signal path</text>
+  <text x="84" y="130" fill="#c8d9a2" font-size="16" font-family="AssetMono">feeds to daily signal, API, RSS and Skill</text>
   ${mobileStageCards}
   <rect x="56" y="884" width="190" height="18" rx="4" fill="#286a4b" />
   <rect x="268" y="884" width="120" height="18" rx="4" fill="#b3261e" />
@@ -124,9 +156,10 @@ async function createFaviconFrame(size) {
   const fontSize = Math.round(size * 0.36);
   const iconSvg = `
   <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
+    ${fontDefs}
     <rect width="${size}" height="${size}" fill="#151713" />
     <rect x="${inset}" y="${inset}" width="${size - inset * 2}" height="${size - inset * 2}" rx="${Math.max(1, Math.round(size * 0.08))}" fill="none" stroke="#fffef8" stroke-width="${strokeWidth}" />
-    <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" fill="#fffef8" font-size="${fontSize}" font-weight="800" font-family="Arial, sans-serif">lgk</text>
+    <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" fill="#fffef8" font-size="${fontSize}" font-weight="800" font-family="AssetSans">lgk</text>
   </svg>
   `;
 
@@ -155,6 +188,7 @@ const codePathHero = await sharp(codePathBrowserPath)
 
 const heroSvg = `
 <svg width="1920" height="1120" viewBox="0 0 1920 1120" xmlns="http://www.w3.org/2000/svg">
+  ${fontDefs}
   <rect width="1920" height="1120" fill="#151713" />
   <rect x="0" y="0" width="820" height="1120" fill="#151713" />
   <rect x="820" y="0" width="1100" height="1120" fill="#dfe8df" />
