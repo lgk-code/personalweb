@@ -37,6 +37,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - 页面应使用真实内容、真实项目、真实截图或可信的生成视觉资产；不要用空泛图标、假数据和 stock 感占位图撑场面。
 - 信息层级要锋利：首屏建立身份和方向，项目区说明价值和证据，细节区展示能力结构与联系方式。
 - 动效要克制，服务叙事、空间、状态变化或项目理解；不能为了炫技牺牲可读性和性能。
+- 当前页面容易显得单调；后续 UI 迭代应主动考虑有记忆点的动效或微交互。可以评估 Remotion、CSS/WAAPI、React 动画库或原生滚动/视差方案，但不要为了普通 UI 微交互动用过重方案。
 - 桌面和移动端都必须是完整体验。移动端不能出现遮挡、溢出、文字压缩、按钮难点或首屏主体缺失。
 - 保持可访问性：语义结构清楚，颜色对比可读，键盘可达，图片有合理替代文本，动画尊重用户的减少动态偏好。
 
@@ -46,6 +47,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - 对 Next.js/TypeScript 改动，优先运行 `npm run quality`；若只跑局部命令，说明覆盖范围和剩余风险。
 - UI 改动完成后，默认启动本地站点并给出访问地址。
 - 交付前必须使用真实浏览器查看页面，至少覆盖桌面和移动端视口，并保存或说明截图检查结果。
+- 如果本次改动包含动效，截图只能作为单帧证据；验收还必须用真实浏览器观察整体风格、节奏、过渡手感和 reduced-motion 表现，必要时补充录屏或明确描述运动状态。
 - 完整交付必须通过三 Agent 终审：见 `docs/REVIEW-RUBRIC.md`。三个评分均需大于或等于 90，且没有红线。
 
 ## Safety Boundaries

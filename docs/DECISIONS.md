@@ -15,7 +15,7 @@
 
 - Treat `https://github.com/lgk-code/personalweb` as the canonical repository binding for this project.
 - Use `https://github.com/lgk-code/personalweb.git` as `origin` when the repository is initialized locally.
-- Keep the repository binding in project docs, but do not render the repository link on the public page until it is publicly reachable.
+- Keep the repository binding in project docs. The repository is publicly reachable as of 2026-06-15, but the public page can keep omitting the source link until the site intentionally adds a personalweb source-code callout.
 
 ## 2026-06-14 — Project Showcase Sources
 
@@ -28,6 +28,8 @@
 - Do not use Remotion for the first homepage slice; current motion is lightweight CSS only.
 - Use real project screenshots where available. AIFocus uses a generated PNG data-system visual until a safe real product screenshot is available.
 - The first screen should show project evidence immediately, so it uses a generated bitmap composition rather than purely decorative CSS shapes.
+- 2026-06-15 motion remains CSS-only: desktop may use slow hero drift and project scanline/reveal motion, while small screens disable continuous hero drift and `prefers-reduced-motion: reduce` explicitly disables the motion layer.
+- Project motion should be tied to the showcased system: AIFocus uses information-chain scan motion, while CodePath uses side-panel focus/lock motion rather than sharing a single generic effect.
 
 ## 2026-06-14 — Verification
 

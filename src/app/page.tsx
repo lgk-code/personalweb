@@ -35,7 +35,7 @@ function StructuredData() {
 
 function AIFocusVisual() {
   return (
-    <div className="project-visual asset-visual">
+    <div className="project-visual asset-visual aifocus-visual">
       <picture>
         <source media="(max-width: 820px)" srcSet="/projects/aifocus-signal-mobile.png" />
         <Image
@@ -91,7 +91,7 @@ function ProjectArticle({ project }: { project: Project }) {
   const titleId = `${project.visual}-project-title`;
 
   return (
-    <article className="project-card" aria-labelledby={titleId}>
+    <article className={`project-card project-card-${project.visual}`} aria-labelledby={titleId}>
       <ProjectVisual visual={project.visual} />
       <div className="project-copy">
         <p className="section-kicker">{project.role}</p>
