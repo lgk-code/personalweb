@@ -386,7 +386,7 @@ a:focus-visible {
 
 .codepath-visual-stack {
   display: grid;
-  width: min(100%, 540px);
+  width: min(100%, 620px);
   gap: 0.85rem;
 }
 
@@ -417,13 +417,13 @@ a:focus-visible {
 }
 
 .codepath-visual-stack .primary-shot {
-  max-height: 310px;
+  max-height: 290px;
   background: #101823;
 }
 
 .codepath-visual-stack .secondary-shot {
-  width: 88%;
-  max-height: 180px;
+  width: 100%;
+  max-height: 230px;
   justify-self: end;
   background: #fff;
 }
