@@ -50,10 +50,11 @@
 - Static accessibility output checks cover landmarks, skip targets, labelled navigation, focus outlines, reduced motion, image alt text, and link safety.
 - Public link checks use a static allowlist for rendered homepage and 404 HTTPS links and prevent not-yet-public repository links from appearing. The allowlist includes the GitHub profile, the personalweb source repository, the CodePath release page, and the CodePath extension download.
 - Live public link checks cover rendered homepage and 404 links as an opt-in final-review command, but stay out of `npm run quality` to avoid network flakes in CI. The script uses `curl` so WSL proxy settings are honored consistently, and strips query/hash from redirected URLs before printing results.
-- Project docs consistency checks keep the repository binding, living `AGENTS.md` rule, `/neat` context-hygiene rule, real browser screenshot requirement, and three-agent final review gate from disappearing by accident.
+- Project docs consistency checks keep the repository binding, living `AGENTS.md` rule, `/neat` context-hygiene rule, real browser screenshot requirement, three-agent final review gate, and GitHub Actions Node 22 / v6 action runtime from disappearing by accident.
 - Audit checks require zero moderate-or-higher advisories.
 - Pin `next` to `16.2.9` and use an npm override for its internal `postcss` dependency until Next ships the patched PostCSS version upstream.
 - Mirror the same gate in GitHub Actions for `main` pushes and pull requests.
+- Keep first-party GitHub Actions on Node-24-ready major versions where available; the quality workflow currently uses `actions/checkout@v6`, `actions/setup-node@v6`, and Node 22 for the project runtime.
 - Use Dependabot PRs for npm and GitHub Actions updates instead of ad hoc dependency drift.
 - Full delivery also requires browser screenshot verification and the three-role subagent review gate described in `AGENTS.md`.
 

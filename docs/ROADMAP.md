@@ -31,6 +31,7 @@
 - Basic security headers are configured in `next.config.ts`.
 - `npm run quality` runs generated asset drift checks, test, lint, design redline checks, content redline checks, contrast checks, public asset privacy scans, build, static HTML output checks, route output checks, runtime smoke checks, accessibility checks, public link allowlist checks, project docs consistency checks, package policy checks, sensitive content scanning, and audit checks.
 - GitHub Actions runs the same quality gate on `main` pushes and pull requests.
+- The quality workflow uses `actions/checkout@v6`, `actions/setup-node@v6`, and Node 22; `npm run check:docs` guards those workflow pins.
 - Dependabot is configured for npm and GitHub Actions updates.
 - Runtime dependencies are exact-pinned; `.npmrc` sets `save-exact=true` to preserve that convention during future installs.
 - `docs/REVIEW-RUBRIC.md` defines the three-agent final review scoring rules.
