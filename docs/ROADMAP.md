@@ -12,6 +12,7 @@
 - Key PNG visuals are covered by asset metadata and byte-budget tests.
 - A CodePath public screenshot was copied into `public/projects/` for visual project evidence.
 - A CodePath MCP comparison crop is included as a second public-safe screenshot, with the original local path area excluded.
+- An AIFocus `/agent` page screenshot is included as a manually reviewed public-safe evidence asset for RSS, REST API, OpenAPI, and Skill access.
 - Generated bitmap assets live at `public/projects/aifocus-signal.png` and `public/projects/hero-workbench.png`; both can be regenerated with `npm run assets:generate`.
 - Generated SVG-to-PNG assets embed bundled Next.js Geist fonts before Sharp rasterization so local and CI outputs remain stable.
 - Mobile-specific public assets are generated for AIFocus and CodePath so project evidence remains legible on narrow viewports.
@@ -50,7 +51,7 @@
 ## Next Work
 
 - Continue reducing portfolio-template feel through stronger project-specific composition, while preserving readable real-project evidence.
-- Add a concise AIFocus evidence note when a safe public source or screenshot is available, so the private-project claims remain traceable without exposing local paths.
+- Keep looking for a public AIFocus source URL or deployment target; until then, use only the reviewed `/agent` screenshot and generated safe assets.
 
 ## Midreview Notes
 

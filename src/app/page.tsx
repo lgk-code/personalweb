@@ -36,16 +36,27 @@ function StructuredData() {
 function AIFocusVisual() {
   return (
     <div className="project-visual asset-visual aifocus-visual">
-      <picture>
-        <source media="(max-width: 820px)" srcSet="/projects/aifocus-signal-mobile.png" />
+      <div className="aifocus-visual-stack">
+        <picture>
+          <source media="(max-width: 820px)" srcSet="/projects/aifocus-signal-mobile.png" />
+          <Image
+            className="primary-shot"
+            src="/projects/aifocus-signal.png"
+            alt="AIFocus 从 AI 信源到日报和 Agent Skill 的处理链路图"
+            width={1280}
+            height={760}
+            sizes="(min-width: 1024px) 36vw, 92vw"
+          />
+        </picture>
         <Image
-          src="/projects/aifocus-signal.png"
-          alt="AIFocus 从 AI 信源到日报和 Agent Skill 的处理链路图"
-          width={1280}
-          height={760}
-          sizes="(min-width: 1024px) 42vw, 92vw"
+          className="secondary-shot"
+          src="/projects/aifocus-agent-access-crop.png"
+          alt="AIFocus Agent、RSS 和 REST API 接入页面截图"
+          width={1200}
+          height={863}
+          sizes="(min-width: 1024px) 32vw, 82vw"
         />
-      </picture>
+      </div>
     </div>
   );
 }

@@ -393,10 +393,18 @@ a:focus-visible {
   align-items: center;
 }
 
+.aifocus-visual-stack,
 .codepath-visual-stack {
   display: grid;
-  width: min(100%, 680px);
   gap: 0.85rem;
+}
+
+.aifocus-visual-stack {
+  width: min(100%, 640px);
+}
+
+.codepath-visual-stack {
+  width: min(100%, 680px);
 }
 
 .asset-visual picture,
@@ -423,6 +431,17 @@ a:focus-visible {
 .project-card:hover .asset-visual img {
   filter: saturate(1.04) contrast(1.03);
   transform: translateY(-3px);
+}
+
+.aifocus-visual-stack .primary-shot {
+  background: #f7f1e3;
+}
+
+.aifocus-visual-stack .secondary-shot {
+  width: 100%;
+  max-height: 300px;
+  justify-self: end;
+  background: #fff;
 }
 
 .codepath-visual-stack .primary-shot {
@@ -1001,6 +1020,14 @@ a:focus-visible {
 
   .asset-visual img {
     max-height: 560px;
+  }
+
+  .aifocus-visual-stack {
+    width: min(100%, 420px);
+  }
+
+  .aifocus-visual-stack .secondary-shot {
+    display: none;
   }
 
   .codepath-visual-stack {

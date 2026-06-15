@@ -26,7 +26,7 @@
 ## 2026-06-14 — Motion And Media
 
 - Do not use Remotion for the first homepage slice; current motion is lightweight CSS only.
-- Use real project screenshots where available. AIFocus uses a generated PNG data-system visual until a safe real product screenshot is available.
+- Use real project screenshots where available. AIFocus combines a generated data-system visual with a manually reviewed `/agent` access screenshot until a public deployment or source URL is available.
 - The first screen should show project evidence immediately, so it uses a generated bitmap composition rather than purely decorative CSS shapes.
 - Generated SVG-to-PNG assets embed Next.js bundled Geist WOFF2 fonts before Sharp rasterization so local WSL output and GitHub Actions output do not drift due to host font differences.
 - 2026-06-15 motion remains CSS-only: desktop may use slow hero drift and project scanline/reveal motion, while small screens disable continuous hero drift and `prefers-reduced-motion: reduce` explicitly disables the motion layer.

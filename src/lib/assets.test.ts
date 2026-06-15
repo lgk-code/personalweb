@@ -23,6 +23,12 @@ const visualAssets = [
     maxBytes: 120_000,
   },
   {
+    file: "aifocus-agent-access-crop.png",
+    minWidth: 1000,
+    minHeight: 520,
+    maxBytes: 80_000,
+  },
+  {
     file: "codepath-browser.png",
     minWidth: 1200,
     minHeight: 1000,

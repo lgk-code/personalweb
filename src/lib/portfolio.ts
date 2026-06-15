@@ -100,7 +100,7 @@ export const portfolio = {
     },
     {
       label: "Truth boundary",
-      value: "public links only, generated safe assets, no private project paths",
+      value: "public links only, reviewed/generated safe assets, no private project paths",
     },
   ],
   contactHeading: "看公开代码与 release；如果方向对味，就从一个具体系统聊起。",
