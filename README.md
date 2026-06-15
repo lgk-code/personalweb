@@ -28,6 +28,8 @@ http://localhost:3000
 
 生产环境优先通过 `NEXT_PUBLIC_SITE_URL` 指定公开站点地址；未设置时会依次使用 Vercel 自动注入的生产/预览地址，本地开发优先回退到 `http://localhost:$PORT`，未设置 `PORT` 时使用 `http://localhost:3000`。配置值会归一到站点 origin，移除 path、query 和 hash；`/robots.txt`、`/sitemap.xml` 和分享图 metadata 都使用同一套解析逻辑。
 
+这些 metadata 和 metadata routes 目前保持静态输出；如果本地生产预览使用非 3000 端口并希望 canonical、OG、robots 和 sitemap 同步到该端口，需要在 `npm run build` 前显式设置 `NEXT_PUBLIC_SITE_URL`，例如 `NEXT_PUBLIC_SITE_URL=http://127.0.0.1:3001 npm run build`。
+
 ## 验证
 
 ```bash
@@ -87,7 +89,7 @@ npm run assets:generate
 - `public/projects/hero-workbench.png`：由 AIFocus 视觉和 CodePath 截图合成的首屏背景图。
 - `src/app/favicon.ico`：自有 `lgk` favicon，避免保留脚手架默认图标。
 
-CodePath 项目展示使用相邻项目中已有的公开截图，并将含本机路径的 MCP 原图裁剪为只保留公开对比表的 `public/projects/codepath-mcp-comparison.png`。
+CodePath 项目展示使用相邻项目中已有的公开截图，并将含本机路径的 MCP 原图人工裁剪为只保留公开对比表的 `public/projects/codepath-mcp-comparison.png`。这张对比表属于已审核的派生截图，不由 `assets:generate` 重新生成；它仍受尺寸、字节预算和公开资产隐私扫描覆盖。
 
 生成脚本会把 Next.js 随包提供的 Geist WOFF2 字体嵌入中间 SVG，再通过 Sharp 栅格化，避免本机和 GitHub Actions 因系统字体不同导致 PNG 漂移。
 

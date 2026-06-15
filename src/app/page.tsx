@@ -62,7 +62,7 @@ function CodePathVisual() {
             alt="CodePath 在 GitHub 页面侧边栏中分析源码的截图"
             width={1434}
             height={1308}
-            sizes="(min-width: 1024px) 38vw, 92vw"
+            sizes="(min-width: 1024px) 42vw, 92vw"
           />
         </picture>
         <Image
@@ -71,7 +71,7 @@ function CodePathVisual() {
           alt="CodePath MCP 与 GitHub API 分析深度对比表截图"
           width={790}
           height={420}
-          sizes="(min-width: 1024px) 30vw, 82vw"
+          sizes="(min-width: 1024px) 34vw, 82vw"
         />
       </div>
     </div>

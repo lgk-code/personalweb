@@ -38,12 +38,14 @@
 - 2026-06-15 real browser verification passed with Browser DOM checks at 1440x1000, 390x844, 360x780, and 430x932: no horizontal overflow, no console errors, visible hero image loaded, proof labels stayed within viewport, desktop retained `hero-drift`, and small screens disabled the continuous hero drift.
 - 2026-06-15 Edge headless screenshots were captured for desktop hero, mobile hero, and desktop project section after the in-app Browser screenshot API timed out. Use Browser DOM checks plus Edge/CDP screenshot fallback if this recurs.
 - 2026-06-15 final-style three-agent review passed: vibe coder 92, native design 92, destructive quality 92, with no redlines.
+- 2026-06-15 final three-agent re-review passed after cleanup: vibe coder 96, native design 96, destructive quality 96, with no redlines.
 - 2026-06-15 live public link check passed with `npm run check:links:live`.
 - 2026-06-15 project section motion was differentiated: AIFocus keeps information-chain scan motion, CodePath uses side-panel focus/lock motion, and the desktop CodePath card reverses the text/media order to reduce repeated case-study card rhythm.
 - 2026-06-15 project items now read more like system records than closed portfolio cards: each item has a `System log` record label, open top/bottom row borders, and a documented AIFocus public-evidence boundary in `README.md`.
 - 2026-06-15 GitHub Actions Quality passed on `main` after generated asset font embedding removed local/CI screenshot drift.
 - 2026-06-15 project records gained input/process/output workflow traces, and scroll reveal now keeps project-card opacity at full strength so screenshot timing cannot make copy look faded.
 - 2026-06-15 method section gained a quality ledger so the working-style area points to concrete verification habits instead of abstract process claims.
+- 2026-06-15 final review cleanup tightened focus-ring styling, mobile navigation breathing room, CodePath evidence sizing, 404 route-state motif, sitemap `lastModified`, and documentation for static metadata preview URLs and the manually reviewed CodePath comparison crop.
 
 ## Next Work
 
@@ -59,6 +61,8 @@ Later on 2026-06-14, a second static-only subagent midreview scored 93 (vibe cod
 ## Known Verification Notes
 
 The in-app Browser screenshot API can time out on `Page.captureScreenshot` even when DOM inspection works. For visual acceptance, use Browser DOM checks for layout/console/motion state and Edge/CDP screenshots for rendered evidence when needed.
+
+Homepage metadata, `robots.txt`, and `sitemap.xml` are static build outputs. For a local production preview on a non-default port, set `NEXT_PUBLIC_SITE_URL` before `npm run build`; changing only `next start --port` after build does not rewrite pre-rendered canonical URLs.
 
 Full-page screenshot tools that do not actually scroll can capture below-fold lazy images before they load. For CodePath visual review, scroll the CodePath project card into view first, then capture the viewport; this confirms `codepath-mcp-comparison.png` is rendered and legible without changing the site's preload policy.
 

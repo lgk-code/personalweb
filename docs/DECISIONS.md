@@ -69,6 +69,7 @@
 - Resolve the public site URL from `NEXT_PUBLIC_SITE_URL`, then Vercel deployment variables, then local development.
 - Normalize configured deployment URLs to their origin by removing path, query, and hash segments.
 - Use the resolved site URL for metadata, `robots.txt`, and `sitemap.xml`.
+- Keep homepage metadata, `robots.txt`, and `sitemap.xml` as static build outputs; local previews on a non-default port must set `NEXT_PUBLIC_SITE_URL` before `npm run build` if canonical URLs need to match that port.
 - Local development falls back to `http://localhost:$PORT` when `PORT` is set, otherwise `http://localhost:3000`.
 - Keep viewport metadata static: `themeColor` matches the dark hero surface and `colorScheme` remains light for default browser UI.
 

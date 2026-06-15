@@ -62,6 +62,13 @@ describe("getSiteUrl", () => {
     expect(getSiteUrl().toString()).toBe("http://localhost:3001/");
   });
 
+  it("uses an explicit public URL over a local preview port", () => {
+    process.env.NEXT_PUBLIC_SITE_URL = "http://127.0.0.1:3001";
+    process.env.PORT = "3001";
+
+    expect(getSiteUrl().toString()).toBe("http://127.0.0.1:3001/");
+  });
+
   it("ignores invalid local PORT values", () => {
     process.env.PORT = "not-a-port";
 
