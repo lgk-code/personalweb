@@ -90,7 +90,12 @@ requireFragments("docs/REVIEW-RUBRIC.md", rubric, [
   "红线",
 ]);
 
-requireFragments(".github/workflows/quality.yml", workflow, ["npm run quality"]);
+requireFragments(".github/workflows/quality.yml", workflow, [
+  "actions/checkout@v6",
+  "actions/setup-node@v6",
+  "node-version: 22",
+  "npm run quality",
+]);
 requireFragments("package.json", packageJson, ['"check:docs"', "check-project-docs.mjs"]);
 
 console.log("Project docs check passed (5 docs, workflow, package metadata)");
