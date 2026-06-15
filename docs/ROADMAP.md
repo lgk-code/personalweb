@@ -40,6 +40,7 @@
 - 2026-06-15 Edge headless screenshots were captured for desktop hero, mobile hero, and desktop project section after the in-app Browser screenshot API timed out. Use Browser DOM checks plus Edge/CDP screenshot fallback if this recurs.
 - 2026-06-15 final-style three-agent review passed: vibe coder 92, native design 92, destructive quality 92, with no redlines.
 - 2026-06-15 final three-agent re-review passed after cleanup: vibe coder 96, native design 96, destructive quality 96, with no redlines.
+- 2026-06-15 AIFocus evidence re-review passed after adding the `/agent` access screenshot: vibe coder 96, native design 96, destructive quality 96, with no redlines.
 - 2026-06-15 live public link check passed with `npm run check:links:live`.
 - 2026-06-15 project section motion was differentiated: AIFocus keeps information-chain scan motion, CodePath uses side-panel focus/lock motion, and the desktop CodePath card reverses the text/media order to reduce repeated case-study card rhythm.
 - 2026-06-15 project items now read more like system records than closed portfolio cards: each item has a `System log` record label, open top/bottom row borders, and a documented AIFocus public-evidence boundary in `README.md`.
